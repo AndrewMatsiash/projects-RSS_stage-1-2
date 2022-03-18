@@ -173,7 +173,7 @@ p {
 }
 
 
-.not__only-title {
+.not-only__title {
   width: 310px;
   margin-bottom: 42px;
 
@@ -184,4 +184,36 @@ p {
   font-size: 15px;
   line-height: 160%;
   margin-bottom: 42px;
+}
+
+.about__inner {
+  display: flex;
+  justify-content: center;
+  padding: 80px 0 100px 0;
+}
+
+.about__img {
+  width: 300px;
+  height: 408px;
+  margin-right: 120px;
+}
+
+.about__description {
+  max-width: 430px;
+}
+
+.about__description-title {
+  width: 288px;
+  font-size: 35px;
+  line-height: 45.5px;
+  margin-bottom: 25px;
+}
+
+.about__description-text {
+  margin-bottom: 25px;
+  font-size: 15px;
+  line-height: 24px;
+}
+.about__description-text:last-child{
+  margin-bottom: 0;
 }
