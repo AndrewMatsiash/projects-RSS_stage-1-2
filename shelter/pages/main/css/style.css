@@ -297,3 +297,41 @@ p {
   width: 261px;
   /* height: 52px; */
 }
+
+/* ///////////////////////////////////////////// */
+.help {
+  text-align: center;
+  padding: 80px 0 100px 0;
+}
+
+.help__title {
+  margin-bottom: 60px;
+}
+
+
+
+.help__inner {
+  text-align: center;
+}
+
+.help__list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 60px 120px;
+  max-width: 1026px;
+  margin: 0 auto;
+}
+/* 
+.help__item {
+   margin-right: 120px; 
+}  */
+
+.help__list-title {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+/* .help__list-img {} */
+
