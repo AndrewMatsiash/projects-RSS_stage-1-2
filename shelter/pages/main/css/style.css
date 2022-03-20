@@ -74,11 +74,13 @@ p {
   font-family: 'Georgia';
   font-weight: 400;
   font-size: 35px;
-  line-height: 130%;
+  line-height: 45px;
+  letter-spacing: 0.06em;
   /* display: inline-block; */
 
 }
 
+/* ///////////////Header//////////////// */
 .header {
   font-family: Arial, sans-serif;
 }
@@ -153,7 +155,7 @@ p {
   border-bottom: solid 2px #F1CDB3;
 }
 
-/* /////////////////////////////////////////// */
+/* ////////////////////not-only /////////////////////// */
 
 .not-only {
   color: #ffff;
@@ -205,7 +207,7 @@ p {
 }
 
 .about__description-title {
-  width: 288px;
+  width: 370px;
   font-size: 35px;
   line-height: 45.5px;
   margin-bottom: 25px;
@@ -221,7 +223,7 @@ p {
   margin-bottom: 0;
 }
 
-/* //////////////////////////////////////// */
+/* ///////////////////our-friend///////////////////// */
 
 .our-friend__container {
   background: #F6F6F6;
@@ -298,13 +300,16 @@ p {
   /* height: 52px; */
 }
 
-/* ///////////////////////////////////////////// */
+/* /////////////////////Help//////////////////////// */
 .help {
   text-align: center;
   padding: 80px 0 100px 0;
 }
 
 .help__title {
+  text-align: center;
+  width: 308px;
+  margin: 0 auto;
   margin-bottom: 60px;
 }
 
@@ -338,7 +343,7 @@ p {
   margin-bottom: 30px;
 }
 
-/* /////////////////////////////////// */
+/* ///////////////In__addition //////////////////// */
 
 .in__addition {
   padding: 80px 0 100px 0;
@@ -358,7 +363,7 @@ p {
 }
 
 .addition-title {
-  width: 280px;
+  width: 300px;
   margin-bottom: 20px;
 }
 
@@ -392,3 +397,65 @@ p {
   line-height: 18px;
   color: #B2B2B2
 }
+
+/* ////////////////Footer/////////////// */
+
+
+.footer {}
+
+.footer__container {
+  background: url(noise_lines_transparent@2X.png), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%)
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    , #211F20;
+  padding-top: 40px;
+}
+
+.footer__inner {
+  display: flex;
+  color: #F6F6F6;
+  gap: 0 160px;
+}
+
+.footer__contacts, .footer__location {
+  padding: 16px 0 60px 0;
+}
+
+.contacts-title, .location-title {
+  margin-bottom: 40px;
+  width: 290px;
+}
+
+.contacts__email, .contacts__phone, .location__adress {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.email-img, .phone-img, .address-img {
+  margin-right: 20px;
+
+}
+
+.email, .phone, .adress-link {
+  font-size: 20px;
+  line-height: 23px;
+  color: #F1CDB3;
+}
+
+/* .phone {} */
+
+/* .footer__location {
+  margin-left: 120px;
+} */
+
+/* .location-title {}
+
+.title {}
+
+.location__adress {}
+
+.address-img {}
+
+.adress-link {}
+
+.footer-img {} */
