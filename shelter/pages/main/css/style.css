@@ -46,10 +46,11 @@ p {
   font-size: 15px;
 }
 
+/* 
 button {
   cursor: pointer;
   letter-spacing: 0.06em;
-}
+} */
 
 .button {
   font-size: 17px;
@@ -59,12 +60,17 @@ button {
   font-family: 'Georgia', serif;
   font-weight: 400;
   color: #292929;
-  background: #F1CDB3;
+  background-color: #F1CDB3;
   border-radius: 100px;
   display: inline-block;
   cursor: pointer;
   transition: color 0.8s;
   border: none;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  background: #FDDCC4;
 }
 
 h4 {
@@ -326,6 +332,7 @@ h5 {
 }
 
 .card-img:hover {
+  transition: all 0.5s;
   background: #F6F6F6;
 }
 
@@ -341,13 +348,21 @@ h5 {
   background: #ffff;
 }
 
-.btn__arrow-left, .btn__arrow-right {
+.btn__arrow-left,
+.btn__arrow-right {
   border-radius: 100px;
   width: 52px;
   height: 52px;
   border: 2px solid #F1CDB3;
   background-color: #F6F6F6;
   margin: auto 0;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn__arrow-left:hover,
+.btn__arrow-right:hover {
+  background-color: #FDDCC4;
 }
 
 .our-friend-btn {
@@ -474,7 +489,8 @@ margin-right: 119px;
   /* gap: 0 149px; */
 }
 
-.footer__contacts, .footer__location {
+.footer__contacts,
+.footer__location {
   padding: 16px 0 60px 0;
   margin-right: 149px;
 }
@@ -484,7 +500,8 @@ margin-right: 119px;
   width: 290px;
 }
 
-.contacts__email, .contacts__phone {
+.contacts__email,
+.contacts__phone {
   margin-bottom: 40px;
   display: flex;
   align-items: center;
@@ -500,12 +517,15 @@ margin-right: 119px;
   margin-bottom: 33px;
 }
 
-.email-img, .phone-img, .address-img {
+.email-img,
+.phone-img,
+.address-img {
   margin-right: 20px;
 
 }
 
-.email, .phone, .adress-link {
+.email, .phone,
+.adress-link {
   font-size: 20px;
   line-height: 23px;
   color: #F1CDB3;
