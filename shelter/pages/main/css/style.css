@@ -59,6 +59,7 @@ button {
   height: 52px;
   font-family: 'Georgia', serif;
   font-weight: 400;
+  letter-spacing: 0.06em;
   color: #292929;
   background-color: #F1CDB3;
   border-radius: 100px;
@@ -532,4 +533,3 @@ margin-right: 119px;
 .footer-img {
   height: 310px;
 }
-
