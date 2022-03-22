@@ -473,9 +473,6 @@ margin-right: 119px;
 
 /* ////////////////Footer/////////////// */
 
-
-.footer {}
-
 .footer__container {
   background: url(noise_lines_transparent@2X.png), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%)
     /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
@@ -491,7 +488,7 @@ margin-right: 119px;
 
 .footer__contacts,
 .footer__location {
-  padding: 16px 0 60px 0;
+  padding: 16px 0 0 0;
   margin-right: 149px;
 }
 
@@ -536,20 +533,3 @@ margin-right: 119px;
   height: 310px;
 }
 
-/* .phone {} */
-
-/* .footer__location {
-  margin-left: 120px;
-} */
-
-/* .location-title {}
-
-.title {}
-
-.location__adress {}
-
-.address-img {}
-
-.adress-link {}
-
-*/
