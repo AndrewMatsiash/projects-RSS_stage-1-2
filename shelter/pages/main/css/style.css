@@ -202,7 +202,6 @@ h5 {
 
 .menu__link:hover {
   padding-bottom: 4px;
-  border-bottom: solid 2px #F1CDB3;
   color: #ffff;
 }
 
@@ -332,9 +331,10 @@ h5 {
   margin-bottom: 28px;
 }
 
-.card-img:hover {
+.card:hover .card-img {
   transition: all 0.5s;
   background: #F6F6F6;
+
 }
 
 .card__title {
