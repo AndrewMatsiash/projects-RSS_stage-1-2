@@ -208,6 +208,7 @@ h5 {
 .menu__link.active {
   padding-bottom: 4px;
   border-bottom: solid 2px #F1CDB3;
+  color: #ffff;
 }
 
 /* ////////////////////not-only /////////////////////// */
