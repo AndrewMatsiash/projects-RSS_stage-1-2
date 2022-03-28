@@ -306,6 +306,9 @@ justify-items: center; */
 .btn__arrow:last-child {
   margin-right: 0px;
 }
+.btn__arrow.active {
+  background-color: #F1CDB3;
+}
 
 .btn__arrow:hover,
 .btn__arrow:hover {
