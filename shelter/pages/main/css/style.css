@@ -29,6 +29,7 @@ a {
   color: inherit;
   text-decoration: none;
   cursor: pointer;
+  color: #CDCDCD;
 }
 
 
@@ -36,9 +37,6 @@ ul {
   list-style: none;
 }
 
-a {
-  color: #CDCDCD;
-}
 
 p {
   font-family: 'Arial';
@@ -140,10 +138,13 @@ h5 {
   padding: 60px 0 0 0;
 }
 
-.header__top {
+/* .header__top {
   display: flex;
   justify-content: space-between;
   align-items: center;
+} */
+.logo__text {
+  cursor: pointer;
 }
 
 .logo-title {
@@ -228,8 +229,14 @@ h5 {
 }
 
 .not-only__inner {
-  padding-top: 224px;
+  display: flex;
+  /* flex-wrap: wrap; */
 
+}
+
+.not-only__content {
+  padding-top: 224px;
+  margin-right: 40px;
 }
 
 
@@ -249,6 +256,13 @@ h5 {
   margin-bottom: 42px;
 }
 
+.not-only-btn {
+  padding: 14px 44px;
+}
+
+.not-only-img {
+  padding-top: 60px;
+}
 
 /* /////////////////////about//////////////////// */
 
@@ -316,8 +330,9 @@ h5 {
 .card {
   width: 270px;
   height: 435px;
-  background-color: #ffff;
+  background: #FAFAFA;
   margin-right: 90px;
+  cursor: pointer;
 }
 
 .card:nth-child(4) {
@@ -330,24 +345,31 @@ h5 {
 
 .card-img {
   margin-bottom: 28px;
+  background: #FAFAFA;
 }
 
-.card:hover .card-img {
+
+.card:hover {
   transition: all 0.5s;
-  background: #F6F6F6;
+  background: #ffff;
 
 }
+
 
 .card__title {
   margin-bottom: 30px;
-
 }
 
 .card-btn {
   width: 187px;
   height: 52px;
   border: 2px solid #F1CDB3;
-  background: #ffff;
+  background: transparent;
+}
+
+.card:hover .card-btn {
+  box-shadow: 1px 1px 4px 8px rgb(241 205 179 / 20%);
+
 }
 
 .btn__arrow-left,
@@ -369,6 +391,7 @@ h5 {
 
 .our-friend-btn {
   width: 261px;
+  padding: 14px 44px;
   /* height: 52px; */
 }
 
