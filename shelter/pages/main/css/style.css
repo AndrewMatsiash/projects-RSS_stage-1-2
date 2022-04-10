@@ -458,6 +458,7 @@ margin-right: 119px;
 .addition__img {
   margin-right: 30px;
   padding-top: 10px;
+  background-color: inherit;
 }
 
 .addition__description {
