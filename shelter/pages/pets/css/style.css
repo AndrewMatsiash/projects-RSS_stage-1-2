@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-
 html,
 body {
   position: relative;
@@ -29,32 +28,19 @@ a {
   color: #545454;
   text-decoration: none;
   cursor: pointer;
-  /* font-family: 'Arial';
-  font-style: normal;
-  font-weight: 400; */
   font-size: 15px;
   line-height: 15px;
 }
 
-
 ul {
   list-style: none;
 }
-
 
 p {
   font-family: 'Arial';
   font-weight: 400;
   font-size: 15px;
 }
-
-/* 
-button {
-  cursor: pointer;
-  letter-spacing: 0.06em;
-} */
-
-
 
 .button {
   font-size: 17px;
@@ -77,8 +63,6 @@ button {
 .button:hover {
   background: #FDDCC4;
 }
-
-
 
 h4 {
   font-family: 'Georgia';
@@ -107,10 +91,6 @@ h5 {
   letter-spacing: 0.06em;
 }
 
-/* button:hover {
-  color: #ffff;
-} */
-
 .container {
   max-width: 1280px;
   padding: 0px 40px;
@@ -123,8 +103,6 @@ h5 {
   font-size: 35px;
   line-height: 45px;
   letter-spacing: 0.06em;
-  /* display: inline-block; */
-
 }
 
 /* ///////////////Header//////////////// */
@@ -137,23 +115,16 @@ h5 {
 
 .header__container {
   background-color: #ffff;
-  /* background-size: auto;
-  background-position: center 0px; */
-
 }
 
 .header__inner {
   display: flex;
   padding: 30px 0 30px 0;
   color: #545454;
-
 }
 
 
 .logo-title {
-  /* font-family: 'Georgia';
-  font-style: normal;
-  font-weight: 400; */
   font-size: 32px;
   line-height: 35px;
   margin-bottom: 10px;
@@ -166,10 +137,6 @@ h5 {
   letter-spacing: 0.1em;
   padding-left: 3px;
 }
-
-
-
-
 
 .menu {
   margin-left: auto;
@@ -187,8 +154,6 @@ h5 {
   margin-left: 0;
 
 }
-
-
 
 .menu__item {
   line-height: 24px;
@@ -213,7 +178,6 @@ h5 {
   border-bottom: solid 2px #F1CDB3;
 }
 
-
 /* ///////////////////our-friend///////////////////// */
 
 .our-friend__container {
@@ -226,23 +190,12 @@ h5 {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-
 }
 
 .our-friend__title {
   width: 400px;
   margin-bottom: 60px;
-
 }
-
-/* .slider__card { 
-  /* display: grid;
-grid-template-columns: repeat(4,1fr);
-gap: 15px 20px;
-justify-items: center; */
-
-/* }  */
 
 .slider-card__inner {
   display: flex;
@@ -258,34 +211,23 @@ justify-items: center; */
   background: #FAFAFA;
   cursor: pointer;
   border-radius: 9px;
-  /* margin-right: 40px; */
 }
 
 .card:hover {
   transition: all 0.5s;
   background: #FFFFFF;
   transform: scale(1.1);
-
 }
 
 .card:hover .card-btn {
   background-color: #F1CDB3;
 }
 
-/* .card:nth-child(4) {
-  margin-right: 53px;
-}
-
-.card:nth-child(2) {
-  margin-left: 53px;
-} */
-
 .card-img {
   margin-bottom: 28px;
   background: #FAFAFA;
   border-radius: 9px;
 }
-
 
 .card:hover {
   transition: all 0.5s;
@@ -294,14 +236,8 @@ justify-items: center; */
 
 }
 
-/* .card-img:hover {
-  transition: all 0.5s;
-  background: #F6F6F6;
-} */
-
 .card__title {
   margin-bottom: 30px;
-
 }
 
 .card-btn {
@@ -310,8 +246,6 @@ justify-items: center; */
   border: 2px solid #F1CDB3;
   background: transparent;
 }
-
-
 
 .btn__arrow {
   font-size: 20px;
@@ -332,23 +266,16 @@ justify-items: center; */
   margin-right: 0px;
 }
 
-
 .active-number-btn {
   cursor: auto;
   background-color: #F1CDB3 !important;
 }
 
-/* .active-number:hover {
-  cursor: auto;
-  background-color: #F1CDB3 !important;
-} */
-
 .btn__arrow.active {
   background-color: #F1CDB3;
 }
 
-.btn__arrow:hover,
-.btn__arrow:hover {
+.btn__arrow:hover,.btn__arrow:hover {
   background-color: #FDDCC4;
 }
 
@@ -366,25 +293,21 @@ justify-items: center; */
 
 .our-friend-btn {
   width: 261px;
-  /* height: 52px; */
 }
 
 /* ////////////////Footer/////////////// */
 
 .footer__container {
-  background: url(noise_lines_transparent@2X.png), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%)
-    , #211F20;
+  background: url('../../../assets/img/footer-bg.png');
   padding-top: 40px;
 }
 
 .footer__inner {
   display: flex;
   color: #F6F6F6;
-  /* gap: 0 149px; */
 }
 
-.footer__contacts,
-.footer__location {
+.footer__contacts,.footer__location {
   padding: 16px 0 0 0;
   margin-right: 149px;
 }
@@ -394,8 +317,7 @@ justify-items: center; */
   width: 290px;
 }
 
-.contacts__email,
-.contacts__phone {
+.contacts__email,.contacts__phone {
   margin-bottom: 40px;
   display: flex;
   align-items: center;
@@ -411,16 +333,12 @@ justify-items: center; */
   margin-bottom: 33px;
 }
 
-.email-img,
-.phone-img,
-.address-img {
+.email-img,.phone-img,.address-img {
   margin-right: 20px;
 
 }
 
-.email,
-.phone,
-.adress-link {
+.email,.phone,.adress-link {
   font-size: 20px;
   line-height: 23px;
   color: #F1CDB3;
