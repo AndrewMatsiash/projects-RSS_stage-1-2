@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-
 html,
 body {
   position: relative;
@@ -32,7 +31,6 @@ a {
   color: #CDCDCD;
 }
 
-
 ul {
   list-style: none;
 }
@@ -43,12 +41,6 @@ p {
   font-weight: 400;
   font-size: 15px;
 }
-
-/* 
-button {
-  cursor: pointer;
-  letter-spacing: 0.06em;
-} */
 
 .button {
   font-size: 17px;
@@ -99,10 +91,6 @@ h5 {
   letter-spacing: 0.06em;
 }
 
-/* button:hover {
-  color: #ffff;
-} */
-
 .container {
   max-width: 1280px;
   padding: 0px 40px;
@@ -115,8 +103,7 @@ h5 {
   font-size: 35px;
   line-height: 45px;
   letter-spacing: 0.06em;
-  /* display: inline-block; */
-
+ 
 }
 
 /* ///////////////Header//////////////// */
