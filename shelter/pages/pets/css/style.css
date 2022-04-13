@@ -349,3 +349,184 @@ h5 {
 .footer-img {
   height: 310px;
 }
+
+
+
+
+@media (max-width:768px) {
+  .container {
+    max-width: 1280px;
+    padding: 0px 30px;
+    margin: 0 auto;
+  }
+
+  .card-7,
+  .card-8 {
+    display: none;
+  }
+
+  .our-friend__title {
+    width: 400px;
+    margin-bottom: 29px;
+  }
+
+  .aur-friend__inner {
+    padding: 80px 0 77px 0;
+  }
+
+  .slider-card__inner {
+    margin-bottom: 41px;
+  }
+
+  .btn__arrow {
+    margin-right: 16px;
+  }
+
+
+  .footer__inner {
+    display: flex;
+    color: #F6F6F6;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* gap: 0 149px; */
+  }
+
+  .footer-contacts__inner {
+    display: flex;
+    padding-top: 13px;
+    padding-left: 34px;
+    margin-bottom: 24px;
+  }
+
+  .location-title {
+    width: 270px;
+  }
+
+  .footer-img {
+    height: 310px;
+
+  }
+
+  .footer__contacts {
+    padding: 16px 0 0 0;
+    margin-right: 49px;
+  }
+
+  .footer__location {
+    padding: 16px 0 0 0;
+    margin-right: 0px;
+  }
+
+}
+
+@media (max-width:320px) {
+  h4 {
+    font-size: 15px;
+    line-height: 16.5px;
+  }
+
+  .header__inner {
+    display: flex;
+    padding: 30px 0 30px 0;
+  }
+
+  .container {
+    padding: 0px 10px;
+  }
+
+  .logo__text {
+    width: 184px;
+    margin-right: 43px;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menu__burger {
+    display: block;
+  }
+
+  .title {
+    width: 300px;
+    font-size: 25px;
+    line-height: 32px;
+    letter-spacing: 0.06em;
+    padding: 0 3px;
+    text-align: center;
+  }
+
+  .logo-title {
+    font-size: 32px;
+    line-height: 35px;
+    color: #545454;
+    margin-bottom: 10px;
+    padding: 0;
+    text-align: left;
+  }
+
+  .aur-friend__inner {
+    padding: 42px 0 44px 0;
+  }
+
+  .our-friend__title {
+    margin-bottom: 42px;
+  }
+
+  .card {
+    display: none;
+  }
+
+  .card-1,
+  .card-2,
+  .card-3 {
+    display: block;
+  }
+
+  .btn__arrow {
+    margin-right: 6px;
+  }
+
+
+
+
+
+
+  .footer__location {
+    padding: 0;
+  }
+
+  .contacts__email, .contacts__phone {
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .location__adress {
+    display: flex;
+    align-items: center;
+    margin-bottom: 39px;
+  }
+
+  .location-title {
+    margin-bottom: 40px;
+  }
+
+  .footer__contacts {
+    margin-right: 33px;
+  }
+
+  .footer-contacts__inner {
+    flex-direction: column;
+  }
+
+  .footer-img {
+    height: 269px;
+  }
+
+  .location__adress-two {
+    margin-bottom: 17px;
+  }
+
+}
