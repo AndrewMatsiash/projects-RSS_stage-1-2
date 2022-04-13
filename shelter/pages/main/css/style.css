@@ -435,6 +435,10 @@ h5 {
 
 .number__card a {
   color: #545454;
+  transition: all 0.3s;
+}
+.number__card a:hover{
+  color: #e41a1a;
 }
 
 .number__card img {
