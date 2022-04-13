@@ -187,7 +187,7 @@ h5 {
 }
 
 .not-only__container {
-  background-image: url(../../../assets/img/bg.jpg) ;
+  background-image: url(../../../assets/img/bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center -121px;
@@ -333,7 +333,7 @@ h5 {
   background-color: #F1CDB3;
 }
 
-.btn__arrow-left,.btn__arrow-right {
+.btn__arrow-left, .btn__arrow-right {
   border-radius: 100px;
   width: 52px;
   height: 52px;
@@ -344,7 +344,7 @@ h5 {
   transition: all 0.3s;
 }
 
-.btn__arrow-left:hover,.btn__arrow-right:hover {
+.btn__arrow-left:hover, .btn__arrow-right:hover {
   background-color: #FDDCC4;
 }
 
@@ -461,7 +461,7 @@ h5 {
   color: #F6F6F6;
 }
 
-.footer__contacts,.footer__location {
+.footer__contacts, .footer__location {
   padding: 16px 0 0 0;
   margin-right: 149px;
 }
@@ -471,8 +471,8 @@ h5 {
   width: 290px;
 }
 
-.contacts__email,.contacts__phone {
-  margin-bottom: 33px;
+.contacts__email, .contacts__phone {
+  margin-bottom: 39px;
   display: flex;
   align-items: center;
 }
@@ -487,11 +487,12 @@ h5 {
   margin-bottom: 33px;
 }
 
-.email-img,.phone-img,.address-img {
+.email-img, .phone-img, .address-img {
   margin-right: 20px;
 }
 
-.email, .phone,.adress-link {
+.email, .phone, .adress-link {
+  display: flex;
   font-size: 20px;
   line-height: 23px;
   color: #F1CDB3;
