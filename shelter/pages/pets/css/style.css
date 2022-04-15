@@ -44,7 +44,7 @@ p {
 
 .button {
   font-size: 17px;
-  line-height: 130%;
+  line-height: 22px;
   width: 207px;
   height: 52px;
   font-family: 'Georgia', serif;
@@ -178,6 +178,29 @@ h5 {
   border-bottom: solid 2px #F1CDB3;
 }
 
+.menu__burger {
+  display: none;
+  width: 30px;
+  height: 22px;
+  padding: 7px 0;
+  cursor: pointer;
+  z-index: 8;
+  position: relative;
+  top: 12px;
+  right: 43px;
+}
+
+.line-menu {
+  display: block;
+  height: 2px;
+  width: 100%;
+  margin-bottom: 8px;
+  background: rgb(16, 15, 15);
+  ;
+  transition: all 0.3s ease-in-out;
+}
+
+
 /* ///////////////////our-friend///////////////////// */
 
 .our-friend__container {
@@ -198,10 +221,14 @@ h5 {
 }
 
 .slider-card__inner {
-  display: flex;
+  /* display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 30px 40px;
+  gap: 30px 40px; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 31px 41px;
   margin-bottom: 59px;
 }
 
@@ -267,6 +294,7 @@ h5 {
 }
 
 .active-number-btn {
+  font-family: Georgia, serif;
   cursor: auto;
   background-color: #F1CDB3 !important;
 }
@@ -298,13 +326,20 @@ h5 {
 /* ////////////////Footer/////////////// */
 
 .footer__container {
-  background: url('../../../assets/img/footer-bg.png');
+  background: top / cover no-repeat url(../../../assets/img/start-screen-gradient-background-1280.jpg),
+    radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+  background-repeat: no-repeat;
+  background-size: cover;
   padding-top: 40px;
 }
 
 .footer__inner {
   display: flex;
   color: #F6F6F6;
+}
+       
+.footer-contacts__inner{
+  display: flex;
 }
 
 .footer__contacts, .footer__location {
@@ -351,44 +386,106 @@ h5 {
 }
 
 
-
-
-@media (max-width:768px) {
+@media (max-width:1279px) {
   .container {
     max-width: 1280px;
     padding: 0px 30px;
     margin: 0 auto;
   }
 
-  .card-7,
-  .card-8 {
-    display: none;
-  }
-
   .our-friend__title {
     width: 400px;
     margin-bottom: 29px;
+
   }
 
   .aur-friend__inner {
-    padding: 80px 0 77px 0;
+    padding: 201px 0 77px 0;
   }
 
   .slider-card__inner {
-    margin-bottom: 41px;
+    width: 580px;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto 41px auto;
+  }
+
+  .card-items-1 {
+    grid-row-start: 1;
+    grid-column-start: 1;
+
+    grid-row-end: 2;
+    grid-column-end: 2;
+
+  }
+
+  .card-items-2 {
+    grid-row-start: 1;
+    grid-column-start: 2;
+
+    grid-row-end: 2;
+    grid-column-end: 3;
+  }
+
+  .card-items-3 {
+    grid-row-start: 2;
+    grid-column-start: 1;
+
+    grid-row-end: 3;
+    grid-column-end: 2;
+  }
+
+  .card-items-4 {
+    grid-row-start: 2;
+    grid-column-start: 2;
+
+    grid-row-end: 3;
+    grid-column-end: 3;
+  }
+
+  .card-items-5 {
+    grid-row-start: 3;
+    grid-column-start: 1;
+
+    grid-row-end: 4;
+    grid-column-end: 2;
+  }
+
+  .card-items-6 {
+    grid-row-start: 3;
+    grid-column-start: 2;
+
+    grid-row-end: 4;
+    grid-column-end: 3;
+  }
+
+  .card-items-7 {
+    grid-row-start: 2;
+    grid-column-start: 3;
+
+    grid-row-end: 3;
+    grid-column-end: 4;
+  }
+
+  .card-items-8 {
+    grid-row-start: 1;
+    grid-column-start: 3;
+
+    grid-row-end: 2;
+    grid-column-end: 4;
   }
 
   .btn__arrow {
     margin-right: 16px;
   }
 
-
   .footer__inner {
     display: flex;
     color: #F6F6F6;
     flex-wrap: wrap;
     justify-content: center;
-    /* gap: 0 149px; */
   }
 
   .footer-contacts__inner {
@@ -439,7 +536,7 @@ h5 {
     margin-right: 43px;
   }
 
-  .menu {
+  .menu__list {
     display: none;
   }
 
@@ -465,32 +562,40 @@ h5 {
     text-align: left;
   }
 
+  .slider-card__inner {
+    width: 270px;
+    gap: 30px 41px;
+    margin: 0 auto 41px auto;
+  }
+
+  .card-items-2 {
+    grid-row-start: 3;
+    grid-column-start: 1;
+
+    grid-row-end: 4;
+    grid-column-end: 2;
+  }
+
+  .card-items-5 {
+    grid-row-start: 1;
+    grid-column-start: 2;
+
+    grid-row-end: 2;
+    grid-column-end: 3;
+  }
+
+
   .aur-friend__inner {
-    padding: 42px 0 44px 0;
+    padding: 162px 0 44px 0;
   }
 
   .our-friend__title {
     margin-bottom: 42px;
   }
 
-  .card {
-    display: none;
-  }
-
-  .card-1,
-  .card-2,
-  .card-3 {
-    display: block;
-  }
-
   .btn__arrow {
     margin-right: 6px;
   }
-
-
-
-
-
 
   .footer__location {
     padding: 0;
