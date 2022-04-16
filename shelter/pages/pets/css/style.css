@@ -303,7 +303,8 @@ h5 {
   background-color: #F1CDB3;
 }
 
-.btn__arrow:hover, .btn__arrow:hover {
+.btn__arrow:hover,
+.btn__arrow:hover {
   background-color: #FDDCC4;
 }
 
@@ -337,12 +338,13 @@ h5 {
   display: flex;
   color: #F6F6F6;
 }
-       
-.footer-contacts__inner{
+
+.footer-contacts__inner {
   display: flex;
 }
 
-.footer__contacts, .footer__location {
+.footer__contacts,
+.footer__location {
   padding: 16px 0 0 0;
   margin-right: 149px;
 }
@@ -352,7 +354,8 @@ h5 {
   width: 290px;
 }
 
-.contacts__email, .contacts__phone {
+.contacts__email,
+.contacts__phone {
   margin-bottom: 33px;
   display: flex;
   align-items: center;
@@ -368,12 +371,16 @@ h5 {
   margin-bottom: 33px;
 }
 
-.email-img, .phone-img, .address-img {
+.email-img,
+.phone-img,
+.address-img {
   margin-right: 20px;
 
 }
 
-.email, .phone, .adress-link {
+.email,
+.phone,
+.adress-link {
   display: flex;
   font-size: 20px;
   line-height: 23px;
@@ -483,6 +490,8 @@ h5 {
 
   .footer__inner {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     color: #F6F6F6;
     flex-wrap: wrap;
     justify-content: center;
@@ -491,7 +500,7 @@ h5 {
   .footer-contacts__inner {
     display: flex;
     padding-top: 13px;
-    padding-left: 34px;
+    padding-left: 0px;
     margin-bottom: 24px;
   }
 
@@ -501,7 +510,6 @@ h5 {
 
   .footer-img {
     height: 310px;
-
   }
 
   .footer__contacts {
@@ -510,13 +518,15 @@ h5 {
   }
 
   .footer__location {
+    width: 300px;
     padding: 16px 0 0 0;
     margin-right: 0px;
   }
 
+
 }
 
-@media (max-width:320px) {
+@media (max-width:767px) {
   h4 {
     font-size: 15px;
     line-height: 16.5px;
@@ -597,15 +607,27 @@ h5 {
     margin-right: 6px;
   }
 
-  .footer__location {
-    padding: 0;
-  }
-
-  .contacts__email, .contacts__phone {
+  .contacts__email,
+  .contacts__phone {
     margin-bottom: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .footer__inner {
+    display: flex;
+    flex-direction: column;
+    color: #F6F6F6;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-contacts__inner {
+    display: flex;
+    padding-top: 13px;
+    padding-left: 0px;
+    margin-bottom: 0px;
   }
 
   .location__adress {
@@ -619,7 +641,7 @@ h5 {
   }
 
   .footer__contacts {
-    margin-right: 33px;
+    margin-right: 0px;
   }
 
   .footer-contacts__inner {
