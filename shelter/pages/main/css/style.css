@@ -512,12 +512,8 @@ h5 {
   color: #545454;
   transition: all 0.3s;
 }
-<<<<<<< HEAD
-.number__card a:hover{
-=======
 
-.number__card a:hover {
->>>>>>> shelter-part2
+.number__card a:hover{
   color: #e41a1a;
 }
 
