@@ -1,3 +1,6 @@
+
+const body = document.querySelector('.body')
+const wrapper = document.querySelector('.wrapper')
 const menuBurgerIcon = document.querySelector('.menu__burger')
 const navMenu = document.querySelector('.menu')
 const logoBurgerMenu = document.querySelector('.logo__burger-menu')
@@ -8,11 +11,19 @@ const toggleClassActive = (elem) => {
   elem.classList.toggle('active')
 }
 
+const addedClassActive = (elem) => {
+  elem.classList.add('active')
+}
+const addedClassLoced = (elem) => {
+  elem.classList.toggle('_loced')
+}
+
 menuBurgerIcon.addEventListener('click', () => {
   toggleClassActive(menuBurgerIcon)
    toggleClassActive(navMenu) 
-  logoBurgerMenu.classList.add('active')
-  console.log(1);
+   toggleClassActive(wrapper) 
+   addedClassActive(logoBurgerMenu)
+   addedClassLoced(body)
 })
 
 // navMenuItem.addEventListener('click', (event) => {
