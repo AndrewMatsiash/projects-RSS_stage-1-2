@@ -109,10 +109,7 @@ h5 {
 .header {
   font-family: Arial, sans-serif;
   position: relative;
-  background: top / cover no-repeat url(../../../assets/img/start-screen-gradient-background-1280.jpg),
-    radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url(../../../assets/img/noise_transparent@2x.png), radial-gradient(85vw at top left, #5b483a, #262425);
 }
 
 .header__container {}
@@ -240,10 +237,7 @@ h5 {
 
 .not-only {
   color: #ffff;
-  background: top / cover no-repeat url(../../../assets/img/start-screen-gradient-background-1280.jpg),
-    radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url(../../../assets/img/noise_transparent@2x.png), radial-gradient(85vw at top left, #5b483a, #262425);
 }
 
 .not-only__container {
@@ -372,7 +366,7 @@ h5 {
   transition: all 0.5s;
   background: #FFFFFF;
   box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
 }
 
 .card__title {
@@ -513,7 +507,7 @@ h5 {
   transition: all 0.3s;
 }
 
-.number__card a:hover{
+.number__card a:hover {
   color: #e41a1a;
 }
 
@@ -530,11 +524,8 @@ h5 {
 }
 
 /* ////////////////Footer/////////////// */
-.footer{
-   background: url('../../../assets/img/footer-bg.png');
-  background-position: center 0;
-  background-size: cover;
-  background-repeat: no-repeat;
+.footer {
+  background-image: url(../../../assets/img/noise_transparent@2x.png), radial-gradient(85vw at top left, #5b483a, #262425);
 }
 
 .footer__container {
