@@ -24,19 +24,7 @@ body {
   background: #ffff;
 }
 
-body.active{
-overflow-y: hidden;
-}
 
-.wrapper.active header:before {
-  background-color: #292929;
-  content: "";
-  height: 300vh;
-  opacity: .6;
-  position: absolute;
-  width: 100%;
-  z-index: 5;
-}
 
 a {
   color: inherit;
@@ -127,7 +115,6 @@ h5 {
   background-image: url(../../../assets/img/noise_transparent@2x.png), radial-gradient(85vw at top left, #5b483a, #262425);
 }
 
-.header__container {}
 
 .header__inner {
   display: flex;
@@ -225,10 +212,6 @@ h5 {
   padding: 30px 10px 0 10px;
   margin-bottom: 144px;
   cursor: pointer;
-}
-
-.logo__burger-menu.active {
-  display: block;
 }
 
 .burger-title {
@@ -854,10 +837,34 @@ h5 {
 }
 
 @media (max-width:767px) {
+  .logo__burger-menu.active {
+    display: block;
+  }
+
+  body.loked {
+    overflow-y: hidden;
+  }
+
+  .wrapper.shadow header:before {
+    background-color: #292929;
+    content: "";
+    height: 300vh;
+    opacity: .6;
+    position: absolute;
+    width: 100%;
+    z-index: 5;
+  }
+
+  .disabled-link {
+    cursor: auto;
+    pointer-events: none;
+  }
+
   h4 {
     font-size: 15px;
     line-height: 16.5px;
   }
+
 
   .header__inner {
     display: flex;

@@ -1,32 +1,52 @@
+const body = document.querySelector(".body");
+const wrapper = document.querySelector(".wrapper");
+const menuBurgerIcon = document.querySelector(".menu__burger");
+const navMenu = document.querySelector(".menu");
+const logoBurgerMenu = document.querySelector(".logo__burger-menu");
+const navMenulist = document.querySelector(".menu__list");
+const navMenulink = document.querySelectorAll(".menu__link");
+const classActive = "active";
+const classLoked = "loked";
+const classShadow = "shadow";
+const classDisabledLink = "disabled-link";
 
-const body = document.querySelector('.body')
-const wrapper = document.querySelector('.wrapper')
-const menuBurgerIcon = document.querySelector('.menu__burger')
-const navMenu = document.querySelector('.menu')
-const logoBurgerMenu = document.querySelector('.logo__burger-menu')
-const logoHeader = document.querySelector('.logo__text')
-const navMenuItem = document.querySelector('.logo-title')
+const toggleClass = (elem, className) => {
+  elem.classList.toggle(className);
+};
 
-const toggleClassActive = (elem) => {
-  elem.classList.toggle('active')
-}
+const addTheСlass = (elem, className) => {
+  elem.classList.add(className);
+};
 
-const addedClassActive = (elem) => {
-  elem.classList.add('active')
-}
-const addedClassLoced = (elem) => {
-  elem.classList.toggle('_loced')
-}
+const removeClass = (elem, className) => {
+  elem.classList.remove(className);
+};
 
-menuBurgerIcon.addEventListener('click', () => {
-  toggleClassActive(menuBurgerIcon)
-   toggleClassActive(navMenu) 
-   toggleClassActive(wrapper) 
-   addedClassActive(logoBurgerMenu)
-   addedClassLoced(body)
-})
+navMenulink[2].classList.add("disabled-link");
+navMenulink[3].classList.add("disabled-link");
 
-// navMenuItem.addEventListener('click', (event) => {
-//   event.target.innerText ='New name'
-  
-// })
+menuBurgerIcon.addEventListener("click", () => {
+  toggleClass(menuBurgerIcon, classActive);
+  toggleClass(navMenu, classActive);
+  addTheСlass(logoBurgerMenu, classActive);
+  toggleClass(wrapper, classShadow);
+  toggleClass(body, classLoked);
+});
+
+navMenulist.addEventListener("click", (event) => {
+  if (event.target.classList.contains("menu__link")) {
+    removeClass(body, classLoked);
+    removeClass(menuBurgerIcon, classActive);
+    removeClass(navMenu, classActive);
+    removeClass(wrapper, classShadow);
+  }
+});
+
+window.addEventListener("click", (event) => {
+  if (event.target.classList.contains("header")) {
+    removeClass(body, classLoked);
+    removeClass(menuBurgerIcon, classActive);
+    removeClass(navMenu, classActive);
+    removeClass(wrapper, classShadow);
+  }
+});
