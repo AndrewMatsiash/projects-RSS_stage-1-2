@@ -11,13 +11,11 @@ body.loked {
 
 .wrapper {
   position: relative;
-  overflow-x: hidden;
   overflow-y: visible;
 }
 
 html {
   scroll-behavior: smooth;
-  overflow-y: overlay;
 }
 
 
@@ -700,7 +698,6 @@ h5 {
     width: 270px;
   }
 
-  .corusel {}
 
   .slider__card-item {
     display: grid;
@@ -799,8 +796,8 @@ h5 {
     margin-bottom: 17px;
   }
 
-}
 
+}
 
 
 
@@ -915,35 +912,38 @@ h5 {
   margin-bottom: 10px;
 }
 
+@media (max-width:1279px) {
 
-
-.transition-right {
-  animation-name: move-right;
-  animation-duration: 7s;
-}
-
-@keyframes move-right {
-  from {
-    left: -1243px;
-  }
-
-  to {
-    left: -2486px
+  .popup-img__inner {
+    width: 284px;
   }
 }
 
-.transition-left {
-  animation-name: move-left;
-  animation-duration: 7s;
-}
 
-@keyframes move-left {
-
-  from {
-    left: -1243px;
+@media (max-width: 767px) {
+  .popup__content.open {
+    width: 240px;
   }
 
-  to {
-    left: 0px
+  .popup-img__inner {
+    width: 0;
   }
+
+  .popup__discription {
+    width: 240;
+    padding: 10px;
+  }
+
+  .discription__text {
+    width: auto;
+  }
+
+  .popup-title {
+    width: auto;
+  }
+
+  .popup-subtitle {
+    text-align: center;
+  }
+
 }
