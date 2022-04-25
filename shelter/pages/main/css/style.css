@@ -19,6 +19,7 @@ body.loked {
 
 html {
   scroll-behavior: smooth;
+  overflow-y: overlay;
 }
 
 body {
@@ -129,11 +130,6 @@ h5 {
 
 .logo__text {
   cursor: pointer;
-}
-
-.logo__text.open {
-  opacity: 0;
-  visibility: hidden;
 }
 
 .logo-title {
@@ -833,6 +829,10 @@ h5 {
     display: block;
   }
 
+  .logo__text.open {
+    visibility: hidden;
+    opacity: 0;
+  }
 
 
   .wrapper.shadow header:before {
@@ -844,7 +844,6 @@ h5 {
     width: 100%;
     z-index: 5;
   }
-
 
   .disabled-link {
     cursor: auto;
