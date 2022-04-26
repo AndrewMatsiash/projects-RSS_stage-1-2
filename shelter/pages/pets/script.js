@@ -209,36 +209,6 @@ itemActive.addEventListener("click", (e) => {
 });
 
 
-itemActive.addEventListener("click", (e) => {
-  console.log(event.target);
-  if (e.target.closest(`div`).querySelector(`[name=card-btn-1]`)) {
-    popupCreate(0);
-    console.log(1);
-  }
-  // if (e.target.classList.closest("card-btn-1")) {
-  //   popupCreate(1);
-  // }
-  // if (e.target.classList.closest("card-btn-2")) {
-  //   popupCreate(2);
-  // }
-  // if (e.target.classList.closest("card-btn-3")) {
-  //   popupCreate(3);
-  // }
-  // if (e.target.classList.closest("card-btn-4")) {
-  //   popupCreate(4);
-  // }
-  // if (e.target.classList.closest("card-btn-5")) {
-  //   popupCreate(5);
-  // }
-  // if (e.target.classList.closest("card-btn-6")) {
-  //   popupCreate(6);
-  // }
-  // if (e.target.classList.closest("card-btn-7")) {
-  //   popupCreate(7);
-  // }
-});
-
-
 
 
 
@@ -268,7 +238,7 @@ if (widthWindow >= 1280) {
       card1.appendChild(cardBtn);
       itemActive.appendChild(card1);
     }
-
+return ""
   }
 
 
@@ -313,6 +283,7 @@ for (let i = 0; i < 6; i++) {
   arrPagination.push(t);
 }
 
+itemActive.append(CreateCard(arrPagination[0]))
 
 let count = 0;
 let countPage = 1;
@@ -400,10 +371,10 @@ else if (widthWindow === 768) {
       const card1 = document.createElement("div");
       card1.classList.add("card");
       const cardImg = document.createElement("img");
-      cardImg.classList.add("card-img");
+      cardImg.classList.add("card-img", `card-btn-${args[i].id}`);
       cardImg.src = args[i].img;
       const cardTitle = document.createElement("h3");
-      cardTitle.classList.add("card__title");
+      cardTitle.classList.add("card__title", `card-btn-${args[i].id}`);
       cardTitle.innerText = args[i].name;
       const cardBtn = document.createElement("button");
       cardBtn.classList.add("button", "card-btn");
@@ -414,7 +385,7 @@ else if (widthWindow === 768) {
       card1.appendChild(cardBtn);
       itemActive.appendChild(card1);
     }
-
+    return ""
   }
 
 
@@ -448,7 +419,7 @@ else if (widthWindow === 768) {
     lastPageLeft.addEventListener("click", removeAddEventLastPageleft);
   };
 
-
+ 
 
   let arrPagination = [];
   console.log(arrPagination);
@@ -457,6 +428,9 @@ else if (widthWindow === 768) {
 
     arrPagination.push(t);
   }
+  
+
+
 
   let b = arrPagination[0].slice(-2)
   let v = arrPagination[0].slice(0, 2)
@@ -488,12 +462,13 @@ arrPagination.forEach((el)=>{
   randomArray(el)
 })
   console.log(arrPagination);
-
+  
 
 let count = 0;
 let countPage = 1;
 let btnLeftOff = true
-
+  
+itemActive.append(CreateCard(arrPagination[0]))
 /////////////////////////////BtnRight/////////////////////////////////
 
   const removeAddEventLastPageRight = () => {
@@ -575,10 +550,10 @@ if (btnLeftOff === true) {
       const card1 = document.createElement("div");
       card1.classList.add("card");
       const cardImg = document.createElement("img");
-      cardImg.classList.add("card-img");
+      cardImg.classList.add("card-img", `card-btn-${args[i].id}`);
       cardImg.src = args[i].img;
       const cardTitle = document.createElement("h3");
-      cardTitle.classList.add("card__title");
+      cardTitle.classList.add("card__title", `card-btn-${args[i].id}`);
       cardTitle.innerText = args[i].name;
       const cardBtn = document.createElement("button");
       cardBtn.classList.add("button", "card-btn");
@@ -589,7 +564,7 @@ if (btnLeftOff === true) {
       card1.appendChild(cardBtn);
       itemActive.appendChild(card1);
     }
-
+    return ""
   }
 
 
@@ -659,7 +634,7 @@ arrPagination.splice(-5)
 
   
 
-
+  
 
   
 arrPagination.forEach((el)=>{
@@ -667,6 +642,8 @@ arrPagination.forEach((el)=>{
 })
   console.log(arrPagination);
 
+itemActive.append(CreateCard(arrPagination[0]))
+ 
 
 let count = 0;
 let countPage = 1;
