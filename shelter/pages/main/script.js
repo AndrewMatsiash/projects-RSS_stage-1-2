@@ -143,7 +143,7 @@ menuBurgerIcon.addEventListener("click", () => {
   toggleClass(navMenu, classOpen);
   toggleClass(wrapper, classShadow);
   addTheСlass(logoBurgerMenu, classOpen);
-  toggleClass(logo, classOpen)
+  toggleClass(logo,classOpen)
   bodyLockUnlock()
 });
 
@@ -155,7 +155,7 @@ navMenulist.addEventListener("click", (event) => {
 
 wrapper.addEventListener("click", (event) => {
   if (event.target.classList.contains("header")) {
-    removeClassesElements()
+   removeClassesElements()
   }
 });
 
@@ -173,12 +173,12 @@ wrapper.addEventListener("click", (event) => {
 
 function CreateCardleft(n) {
   const card1 = document.createElement("div");
-  card1.classList.add("card", `card-btn-${n}`);
+  card1.classList.add("card");
   const cardImg = document.createElement("img");
-  cardImg.classList.add("card-img", `card-btn-${n}`);
+  cardImg.classList.add("card-img");
   cardImg.src = array[n].img;
   const cardTitle = document.createElement("h3");
-  cardTitle.classList.add("card__title", `card-btn-${n}`);
+  cardTitle.classList.add("card__title");
   cardTitle.innerText = array[n].name;
   const cardBtn = document.createElement("button");
   cardBtn.classList.add("button", "card-btn");
@@ -267,7 +267,7 @@ let widthWindow = window.innerWidth
 
 
 
-let arr = [7, 5, 1]
+let arr = [2, 6, 3]
 
 function random() {
   console.log(arr);
@@ -301,14 +301,13 @@ corusel.addEventListener("animationend", (animationEvent) => {
       CreateCardleft(numberAnimals[0])
       CreateCardleft(numberAnimals[1])
       CreateCardleft(numberAnimals[2])
-    } else if (widthWindow == 768) {
+    } else if (widthWindow <= 768) {
       console.log(768);
       CreateCardleft(numberAnimals[0])
       CreateCardleft(numberAnimals[1])
-    } else if (widthWindow === 320) {
+    } else if (widthWindow <= 320) {
       console.log(320);
       CreateCardleft(numberAnimals[2])
-
     }
 
 
@@ -325,7 +324,7 @@ corusel.addEventListener("animationend", (animationEvent) => {
       CreateCardRight(numberAnimals[0])
       CreateCardRight(numberAnimals[1])
       CreateCardRight(numberAnimals[2])
-    } else if (widthWindow == 768) {
+    } else if (widthWindow === 768) {
       console.log(768);
       CreateCardRight(numberAnimals[0])
       CreateCardRight(numberAnimals[1])
