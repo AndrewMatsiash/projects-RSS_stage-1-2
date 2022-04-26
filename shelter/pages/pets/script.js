@@ -371,10 +371,10 @@ else if (widthWindow === 768) {
       const card1 = document.createElement("div");
       card1.classList.add("card");
       const cardImg = document.createElement("img");
-      cardImg.classList.add("card-img");
+      cardImg.classList.add("card-img", `card-btn-${args[i].id}`);
       cardImg.src = args[i].img;
       const cardTitle = document.createElement("h3");
-      cardTitle.classList.add("card__title");
+      cardTitle.classList.add("card__title", `card-btn-${args[i].id}`);
       cardTitle.innerText = args[i].name;
       const cardBtn = document.createElement("button");
       cardBtn.classList.add("button", "card-btn");
@@ -550,10 +550,10 @@ if (btnLeftOff === true) {
       const card1 = document.createElement("div");
       card1.classList.add("card");
       const cardImg = document.createElement("img");
-      cardImg.classList.add("card-img");
+      cardImg.classList.add("card-img", `card-btn-${args[i].id}`);
       cardImg.src = args[i].img;
       const cardTitle = document.createElement("h3");
-      cardTitle.classList.add("card__title");
+      cardTitle.classList.add("card__title", `card-btn-${args[i].id}`);
       cardTitle.innerText = args[i].name;
       const cardBtn = document.createElement("button");
       cardBtn.classList.add("button", "card-btn");
