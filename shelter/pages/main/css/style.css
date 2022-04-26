@@ -875,6 +875,7 @@ h5 {
     top: 0;
     right: -100%;
     width: 320px;
+    height: 100vh;
     transition: all 0.5s ease-in-out;
   }
 
@@ -886,7 +887,7 @@ h5 {
   }
 
   .menu__list {
-    height: 843px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     font-size: 32px;

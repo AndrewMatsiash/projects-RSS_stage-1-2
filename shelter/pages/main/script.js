@@ -143,7 +143,7 @@ menuBurgerIcon.addEventListener("click", () => {
   toggleClass(navMenu, classOpen);
   toggleClass(wrapper, classShadow);
   addTheСlass(logoBurgerMenu, classOpen);
-  toggleClass(logo,classOpen)
+  toggleClass(logo, classOpen)
   bodyLockUnlock()
 });
 
@@ -155,7 +155,7 @@ navMenulist.addEventListener("click", (event) => {
 
 wrapper.addEventListener("click", (event) => {
   if (event.target.classList.contains("header")) {
-   removeClassesElements()
+    removeClassesElements()
   }
 });
 
@@ -173,12 +173,12 @@ wrapper.addEventListener("click", (event) => {
 
 function CreateCardleft(n) {
   const card1 = document.createElement("div");
-  card1.classList.add("card");
+  card1.classList.add("card", `card-btn-${n}`);
   const cardImg = document.createElement("img");
-  cardImg.classList.add("card-img");
+  cardImg.classList.add("card-img", `card-btn-${n}`);
   cardImg.src = array[n].img;
   const cardTitle = document.createElement("h3");
-  cardTitle.classList.add("card__title");
+  cardTitle.classList.add("card__title", `card-btn-${n}`);
   cardTitle.innerText = array[n].name;
   const cardBtn = document.createElement("button");
   cardBtn.classList.add("button", "card-btn");
@@ -192,21 +192,21 @@ function CreateCardleft(n) {
 
 function CreateCardRight(n) {
   const card1 = document.createElement("div");
-  card1.classList.add("card");
+  card1.classList.add("card", `card-btn-${n}`);
   const cardImg = document.createElement("img");
-  cardImg.classList.add("card-img");
+  cardImg.classList.add("card-img", `card-btn-${n}`);
   cardImg.src = array[n].img;
   const cardTitle = document.createElement("h3");
-  cardTitle.classList.add("card__title");
+  cardTitle.classList.add("card__title", `card-btn-${n}`);
   cardTitle.innerText = array[n].name;
-  const cardbtn = document.createElement("button");
-  cardbtn.classList.add("button", "card-btn");
-  cardbtn.innerText = "Learn more";
-  cardbtn.classList.add(`card-btn-${n}`)
+  const cardBtn = document.createElement("button");
+  cardBtn.classList.add("button", "card-btn");
+  cardBtn.innerText = "Learn more";
+  cardBtn.classList.add(`card-btn-${n}`)
   card1.appendChild(cardImg);
   card1.appendChild(cardTitle);
-  card1.appendChild(cardbtn);
-  itemRight.appendChild(card1);
+  card1.appendChild(cardBtn);
+  itemRight.append(card1);
 }
 
 
@@ -217,36 +217,36 @@ const itemLeft = document.querySelector("#item-left");
 const itemRight = document.querySelector("#item-right");
 const itemActive = document.querySelector("#item-active");
 
-itemActive.addEventListener('click',(e) => {
-  if(e.target.classList.contains('card-btn-0')) {
-  popupCreate(0)
-}
+itemActive.addEventListener('click', (e) => {
+  if (e.target.classList.contains('card-btn-0')) {
+    popupCreate(0)
+  }
   if (e.target.classList.contains('card-btn-1')) {
-  popupCreate(1)
-}
+    popupCreate(1)
+  }
   if (e.target.classList.contains('card-btn-2')) {
-  popupCreate(2)
-}
+    popupCreate(2)
+  }
   if (e.target.classList.contains('card-btn-3')) {
-  popupCreate(3)
-}
-  if (e.target.classList.contains('card-btn-4')) { 
-  popupCreate(4)
-}
+    popupCreate(3)
+  }
+  if (e.target.classList.contains('card-btn-4')) {
+    popupCreate(4)
+  }
   if (e.target.classList.contains('card-btn-5')) {
-  popupCreate(5)
+    popupCreate(5)
 
-}
+  }
   if (e.target.classList.contains('card-btn-6')) {
-  popupCreate(6)
-  
-}
+    popupCreate(6)
+
+  }
   if (e.target.classList.contains('card-btn-7')) {
-  popupCreate(7)
- 
-}
+    popupCreate(7)
+
+  }
 })
- 
+
 
 const moveRight = () => {
   corusel.classList.add("transition-right");
@@ -293,30 +293,33 @@ corusel.addEventListener("animationend", (animationEvent) => {
     const leftItems = itemLeft.innerHTML;
     document.querySelector("#item-active").innerHTML = leftItems;
     itemLeft.innerHTML = "";
-  
+
     let numberAnimals = random()
-    
+
     if (widthWindow >= 1280) {
       console.log(1280);
       CreateCardleft(numberAnimals[0])
       CreateCardleft(numberAnimals[1])
       CreateCardleft(numberAnimals[2])
-     }else if(widthWindow == 768){
-       console.log(768);
+    } else if (widthWindow == 768) {
+      console.log(768);
       CreateCardleft(numberAnimals[0])
       CreateCardleft(numberAnimals[1])
-     }else if(widthWindow === 320){
-       console.log(320);
+    } else if (widthWindow === 320) {
+      console.log(320);
       CreateCardleft(numberAnimals[2])
-     }
-     
+
+    }
+
 
   } else {
     corusel.classList.remove("transition-right");
-    const rightItems = document.querySelector("#item-right").innerHTML;
+    const rightItems = itemRight.innerHTML;
     document.querySelector("#item-active").innerHTML = rightItems;
-    rightItems.innerHTML = "";
+    itemRight.innerHTML = "";
+
     let numberAnimals = random()
+
     if (widthWindow >= 1280) {
       console.log(1280);
       CreateCardRight(numberAnimals[0])
@@ -330,6 +333,7 @@ corusel.addEventListener("animationend", (animationEvent) => {
       console.log(320);
       CreateCardRight(numberAnimals[2])
     }
+
   }
   BtnLeft.addEventListener("click", moveLeft);
   BtnRight.addEventListener("click", moveRight);

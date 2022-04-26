@@ -180,6 +180,7 @@ function randomArray(array) {
 }
 
 itemActive.addEventListener("click", (e) => {
+  console.log(event.target);
   if (e.target.classList.contains("card-btn-0")) {
     popupCreate(0);
     console.log(1);
@@ -208,6 +209,36 @@ itemActive.addEventListener("click", (e) => {
 });
 
 
+itemActive.addEventListener("click", (e) => {
+  console.log(event.target);
+  if (e.target.closest(`div`).querySelector(`[name=card-btn-1]`)) {
+    popupCreate(0);
+    console.log(1);
+  }
+  // if (e.target.classList.closest("card-btn-1")) {
+  //   popupCreate(1);
+  // }
+  // if (e.target.classList.closest("card-btn-2")) {
+  //   popupCreate(2);
+  // }
+  // if (e.target.classList.closest("card-btn-3")) {
+  //   popupCreate(3);
+  // }
+  // if (e.target.classList.closest("card-btn-4")) {
+  //   popupCreate(4);
+  // }
+  // if (e.target.classList.closest("card-btn-5")) {
+  //   popupCreate(5);
+  // }
+  // if (e.target.classList.closest("card-btn-6")) {
+  //   popupCreate(6);
+  // }
+  // if (e.target.classList.closest("card-btn-7")) {
+  //   popupCreate(7);
+  // }
+});
+
+
 
 
 
@@ -223,10 +254,10 @@ if (widthWindow >= 1280) {
       const card1 = document.createElement("div");
       card1.classList.add("card");
       const cardImg = document.createElement("img");
-      cardImg.classList.add("card-img");
+      cardImg.classList.add("card-img",`card-btn-${args[i].id}`);
       cardImg.src = args[i].img;
       const cardTitle = document.createElement("h3");
-      cardTitle.classList.add("card__title");
+      cardTitle.classList.add("card__title",`card-btn-${args[i].id}`);
       cardTitle.innerText = args[i].name;
       const cardBtn = document.createElement("button");
       cardBtn.classList.add("button", "card-btn");
