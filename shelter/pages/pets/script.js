@@ -238,7 +238,7 @@ if (widthWindow >= 1280) {
       card1.appendChild(cardBtn);
       itemActive.appendChild(card1);
     }
-
+return ""
   }
 
 
@@ -283,7 +283,7 @@ for (let i = 0; i < 6; i++) {
   arrPagination.push(t);
 }
 
-itemActive.appendChild(CreateCard(arrPagination[0]))
+itemActive.append(CreateCard(arrPagination[0]))
 
 let count = 0;
 let countPage = 1;
@@ -385,7 +385,7 @@ else if (widthWindow === 768) {
       card1.appendChild(cardBtn);
       itemActive.appendChild(card1);
     }
-
+    return ""
   }
 
 
@@ -462,12 +462,13 @@ arrPagination.forEach((el)=>{
   randomArray(el)
 })
   console.log(arrPagination);
-  itemActive.appendChild(CreateCard(arrPagination[0]))
+  
 
 let count = 0;
 let countPage = 1;
 let btnLeftOff = true
-
+  
+itemActive.append(CreateCard(arrPagination[0]))
 /////////////////////////////BtnRight/////////////////////////////////
 
   const removeAddEventLastPageRight = () => {
@@ -563,7 +564,7 @@ if (btnLeftOff === true) {
       card1.appendChild(cardBtn);
       itemActive.appendChild(card1);
     }
-
+    return ""
   }
 
 
@@ -641,7 +642,7 @@ arrPagination.forEach((el)=>{
 })
   console.log(arrPagination);
 
-  itemActive.appendChild(CreateCard(arrPagination[0]))
+itemActive.append(CreateCard(arrPagination[0]))
  
 
 let count = 0;
