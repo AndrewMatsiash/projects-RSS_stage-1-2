@@ -301,11 +301,11 @@ corusel.addEventListener("animationend", (animationEvent) => {
       CreateCardleft(numberAnimals[0])
       CreateCardleft(numberAnimals[1])
       CreateCardleft(numberAnimals[2])
-    } else if (widthWindow == 768) {
+    } else if (widthWindow <= 768) {
       console.log(768);
       CreateCardleft(numberAnimals[0])
       CreateCardleft(numberAnimals[1])
-    } else if (widthWindow === 320) {
+    } else if (widthWindow <= 320) {
       console.log(320);
       CreateCardleft(numberAnimals[2])
 
@@ -325,7 +325,7 @@ corusel.addEventListener("animationend", (animationEvent) => {
       CreateCardRight(numberAnimals[0])
       CreateCardRight(numberAnimals[1])
       CreateCardRight(numberAnimals[2])
-    } else if (widthWindow == 768) {
+    } else if (widthWindow === 768) {
       console.log(768);
       CreateCardRight(numberAnimals[0])
       CreateCardRight(numberAnimals[1])
