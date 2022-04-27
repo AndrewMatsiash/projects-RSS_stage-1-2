@@ -135,6 +135,7 @@ const bodyLockUnlock = () => {
     removeClass(body, classLoked);
   } else {
     addTheСlass(body, classLoked)
+    toggleClass(logo, classOpen);
   }
 }
 
