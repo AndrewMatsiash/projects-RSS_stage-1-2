@@ -363,7 +363,7 @@ if (btnLeftOff === true) {
 }
 
 }
-else if (widthWindow === 768) {
+else if (widthWindow >= 768) {
   function CreateCard(arr) {
     let args = [...arr];
     console.log(args);
@@ -542,7 +542,7 @@ if (btnLeftOff === true) {
   addedEventBtnLeft()
 }
 
-}else if (widthWindow === 320) {
+}else if (widthWindow >= 320) {
   function CreateCard(arr) {
     let args = [...arr];
     console.log(args);
