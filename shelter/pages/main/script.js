@@ -174,12 +174,12 @@ wrapper.addEventListener("click", (event) => {
 
 function CreateCardleft(n) {
   const card1 = document.createElement("div");
-  card1.classList.add("card");
+  card1.classList.add("card", `card-btn-${n}`);
   const cardImg = document.createElement("img");
-  cardImg.classList.add("card-img");
+  cardImg.classList.add("card-img", `card-btn-${n}`);
   cardImg.src = array[n].img;
   const cardTitle = document.createElement("h3");
-  cardTitle.classList.add("card__title");
+  cardTitle.classList.add("card__title",`card-btn-${n}`);
   cardTitle.innerText = array[n].name;
   const cardBtn = document.createElement("button");
   cardBtn.classList.add("button", "card-btn");
