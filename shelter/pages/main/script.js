@@ -135,7 +135,6 @@ const bodyLockUnlock = () => {
     removeClass(body, classLoked);
   } else {
     addTheСlass(body, classLoked)
-    toggleClass(logo, classOpen);
   }
 }
 
@@ -157,6 +156,7 @@ navMenulist.addEventListener("click", (event) => {
 wrapper.addEventListener("click", (event) => {
   if (event.target.classList.contains("header")) {
    removeClassesElements()
+    toggleClass(logo, classOpen)
   }
 });
 

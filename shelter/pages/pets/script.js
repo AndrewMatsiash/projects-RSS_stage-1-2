@@ -164,7 +164,7 @@ navMenulist.addEventListener("click", (event) => {
 wrapper.addEventListener("click", (event) => {
   if (event.target.classList.contains("header")) {
     removeClassesElements();
-    toggleClass(logo, classOpen);
+    toggleClass(logo, classOpen)
   }
 });
 
