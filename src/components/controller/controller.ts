@@ -23,7 +23,7 @@ class AppController extends AppLoader {
                     super.getResp(
                         {
                             endpoint: 'everything',
-                            options: { sources: sourceId }
+                            options: { sources: sourceId },
                         },
                         callback
                     );

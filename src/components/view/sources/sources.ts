@@ -1,5 +1,5 @@
 import './sources.css';
-import { ISourcesSource } from "../../../types/"
+import { ISourcesSource } from '../../../types/';
 
 class Sources {
     draw(data: ISourcesSource[]): void {
@@ -7,7 +7,6 @@ class Sources {
         const sourceItemTemp: HTMLTemplateElement = document.querySelector('#sourceItemTemp') as HTMLTemplateElement;
 
         data.forEach((item: ISourcesSource): void => {
-
             const sourceClone: HTMLElement = sourceItemTemp.content.cloneNode(true) as HTMLElement;
             const sourceItemName: HTMLElement = sourceClone.querySelector('.source__item-name') as HTMLElement;
             const sourceItem: HTMLElement = sourceClone.querySelector('.source__item') as HTMLElement;

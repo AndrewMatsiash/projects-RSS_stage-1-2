@@ -1,6 +1,5 @@
 import { IEverythingRequestParameters, endpointType, methodType, callback, Status, Request } from '../../types/';
 
-
 class Loader {
     private baseLink: string;
     private options: IEverythingRequestParameters;
@@ -20,8 +19,7 @@ class Loader {
 
     errorHandler(res: Response) {
         if (!res.ok) {
-            if (res.status === Status.One || res.status === Status.Two)
-                console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
+            if (res.status === Status.One || res.status === Status.Two) console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
             throw Error(res.statusText);
         }
 
