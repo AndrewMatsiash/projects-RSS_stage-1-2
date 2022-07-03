@@ -1,9 +1,9 @@
-import { IEverythingRequestParameters, endpointType, methodType, callback, Status, Request } from '../../types/';
+import { endpointType, methodType, callback, Status, Request, Options } from '../../types/';
 
 class Loader {
     private baseLink: string;
-    private options: IEverythingRequestParameters;
-    constructor(baseLink: string, options: IEverythingRequestParameters) {
+    private options: Options;
+    constructor(baseLink: string, options: Options) {
         this.baseLink = baseLink;
         this.options = options;
     }

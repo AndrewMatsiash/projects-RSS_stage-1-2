@@ -76,7 +76,12 @@ export enum Status {
     One = 401,
     Two = 404,
 }
+export type Options = {
+    apiKey?: string | undefined;
+    sources?: string | undefined;
+};
 
+export type Response = IResponceSources | IResponceEverything;
 export type Request = IEverythingRequestParameters | ISourcesRequestParameters;
 export type endpointType = 'everything' | 'sources';
 export type methodType = 'GET' | 'POST';
@@ -113,8 +118,8 @@ export interface ISourcesSource {
     id: string;
     name: string;
     description?: string;
-    url?: string;
-    category?: string;
-    language?: string;
-    country?: string;
+    url: string;
+    category: string;
+    language: string;
+    country: string;
 }
