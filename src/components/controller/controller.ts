@@ -1,4 +1,4 @@
-import { callback } from '../../types/types';
+import { callback } from '../../types';
 import AppLoader from './appLoader';
 
 class AppController extends AppLoader {
