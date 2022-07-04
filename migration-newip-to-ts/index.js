@@ -116,7 +116,7 @@ eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {
   \************************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst loader_1 = __importDefault(__webpack_require__(/*! ./loader */ \"./src/components/controller/loader.ts\"));\nclass AppLoader extends loader_1.default {\n    constructor() {\n        super('https://newsapi.org/v2/', {\n            apiKey: '6ada2a06577644a7ad815c5b796e3107', // получите свой ключ https://newsapi.org/\n        });\n    }\n}\nexports[\"default\"] = AppLoader;\n\n\n//# sourceURL=webpack://NewsJS/./src/components/controller/appLoader.ts?");
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst loader_1 = __importDefault(__webpack_require__(/*! ./loader */ \"./src/components/controller/loader.ts\"));\nclass AppLoader extends loader_1.default {\n    constructor() {\n        super('https://nodenews.herokuapp.com/', {\n            apiKey: '6ada2a06577644a7ad815c5b796e3107', // получите свой ключ https://newsapi.org/\n        });\n    }\n}\nexports[\"default\"] = AppLoader;\n\n\n//# sourceURL=webpack://NewsJS/./src/components/controller/appLoader.ts?");
 
 /***/ }),
 
