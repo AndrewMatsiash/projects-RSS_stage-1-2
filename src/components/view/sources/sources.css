@@ -1,10 +1,9 @@
 .sources {
-    display: flex;
-    flex-wrap: nowrap;
-    width: 100%;
-    height: 120px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 100%;
+    height: 100vh;
     overflow: auto;
-    align-items: center;
     font: 300 1em 'Fira Sans', sans-serif;
 }
 
@@ -13,7 +12,7 @@
     border: 2px solid #30c5ff;
     font: inherit;
     line-height: 1;
-    margin: 0.5em;
+    margin: 0.2em;
     padding: 1em 2em;
     color: #70d6ff;
     transition: 0.25s;
@@ -31,4 +30,32 @@
 .source__item-name {
     font-weight: 400;
     white-space: nowrap;
+}
+
+@media (max-width: 1500px) {
+    .sources {
+
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 1230px) {
+    .sources {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 900px) {
+    .sources {
+        grid-template-columns: repeat(2, 1fr);
+        height: 19vh;
+    }
+}
+
+@media (max-width: 588px) {
+    .sources {
+        grid-template-columns: repeat(1, 1fr);
+        height: 19vh;
+    }
 }
