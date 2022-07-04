@@ -1,6 +1,6 @@
 import AppController from '../controller/controller';
 import { AppView } from '../view/appView';
-import { IResponceEverything, IResponceSources } from '../../types/';
+import { IResponceEverything, IResponceSources } from '../../types';
 
 class App {
     private controller = new AppController();

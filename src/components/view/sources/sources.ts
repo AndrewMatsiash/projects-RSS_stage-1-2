@@ -1,5 +1,5 @@
 import './sources.css';
-import { ISourcesSource } from '../../../types/';
+import { ISourcesSource } from '../../../types';
 
 class Sources {
     draw(data: ISourcesSource[]): void {

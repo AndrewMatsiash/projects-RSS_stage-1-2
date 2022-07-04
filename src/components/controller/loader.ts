@@ -1,4 +1,4 @@
-import { endpointType, methodType, callback, Status, Request, Options } from '../../types/';
+import { endpointType, methodType, callback, Status, Request, Options } from '../../types';
 
 class Loader {
     private baseLink: string;

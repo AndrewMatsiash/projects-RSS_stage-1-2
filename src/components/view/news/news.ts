@@ -1,5 +1,5 @@
 import './news.css';
-import { IArticles } from '../../../types/';
+import { IArticles } from '../../../types';
 
 class News {
     draw(data: IArticles[]) {

@@ -1,6 +1,6 @@
 import News from './news/news';
 import Sources from './sources/sources';
-import { IResponceEverything, IResponceSources, ISourcesSource, IArticles } from '../../types/';
+import { IResponceEverything, IResponceSources, ISourcesSource, IArticles } from '../../types';
 export class AppView {
     private news: News;
     private sources: Sources;
