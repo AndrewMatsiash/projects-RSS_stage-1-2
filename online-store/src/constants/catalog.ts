@@ -93,7 +93,7 @@ export const CATALOG = [
     popular: 'нет',
     color: 'красный',
     numberOfCameras: 2,
-    brand: 'samsung',
+    brand: 'Samsung',
   },
   {
     id: 'el1',
@@ -105,7 +105,7 @@ export const CATALOG = [
     popular: 'нет',
     color: 'желтый',
     numberOfCameras: 1,
-    brand: 'samsung',
+    brand: 'Samsung',
   },
   {
     id: 'el1',
@@ -117,7 +117,7 @@ export const CATALOG = [
     popular: 'нет',
     color: 'белый',
     numberOfCameras: 3,
-    brand: 'samsung',
+    brand: 'Samsung',
   },
 
 ];
