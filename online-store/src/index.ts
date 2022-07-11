@@ -1,3 +1,3 @@
 import './style.scss';
-
-console.log('Hello world');
+import './components/header/header';
+import './components/products/products';
