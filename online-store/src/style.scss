@@ -1,8 +1,9 @@
 @import "./components/header/header.scss";
+@import "./components/filters/filters.scss";
 @import "./components/products/products.scss";
 
 :root {
-	--color-light: #f8f9fa;
+	--color-light: #257dd5;
 	--color-medium: #e8e8e8;
 	--color-dark: #a1a1a1;
 	--color-unaccent: #808080;

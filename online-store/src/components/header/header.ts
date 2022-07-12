@@ -2,7 +2,7 @@ import { ROOT_HEADER } from '../../constants/root';
 import { localStorageUtil } from '../../utils/localStorage';
 
 export class Header {
-  static render(count:number) {
+  static render(count:number):void {
     const html = `
 <div class="header-container">
 <div class="logo">📱MobileStore</div>

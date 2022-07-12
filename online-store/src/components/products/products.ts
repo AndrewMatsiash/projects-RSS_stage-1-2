@@ -10,11 +10,11 @@ class Products {
 
   labelRemove: string;
 
-  // classList!: string;
-
   innerHTML: string | undefined;
 
   id!: string;
+
+  classList: any;
 
   constructor() {
     this.classNameActive = 'products-element__btn_active';
@@ -35,12 +35,12 @@ class Products {
     Header.render(products.length);
   }
 
-  render(): void {
-    const productsStore = localStorageUtil.getProducts();
+  render(catalog = CATALOG): void {
+    const productsStore:string[] = localStorageUtil.getProducts();
 
     let htmlCatalog = '';
 
-    CATALOG.forEach(({
+    catalog.forEach(({
       id, name, img, popular, numberOfCameras, color, quantity, releaseDate, brand,
     }) => {
       let activeClass = '';
@@ -82,5 +82,7 @@ class Products {
   }
 }
 
-const productsPage = new Products();
+export const productsPage = new Products();
 productsPage.render();
+console.log(CATALOG);
+

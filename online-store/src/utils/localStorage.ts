@@ -14,7 +14,7 @@ class LocalStorag {
   }
 
   setProducts(id: string): { pushProduct: boolean, products: string[] | [] } {
-    const products: [] | string[] = this.getProducts();
+    const products:string[] = this.getProducts();
     const index = products.indexOf(id);
     let pushProduct = false;
     if (index === -1) {
