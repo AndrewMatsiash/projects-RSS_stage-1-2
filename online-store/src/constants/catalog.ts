@@ -12,7 +12,7 @@ export const CATALOG = [
     brand: 'Apple',
   },
   {
-    id: 'el1',
+    id: 'el2',
     img: 'https://i.ibb.co/Qv869FZ/12.jpg',
     name: 'Apple iPhone 12',
     quantity: 2,
@@ -24,7 +24,7 @@ export const CATALOG = [
     brand: 'Apple',
   },
   {
-    id: 'el1',
+    id: 'el3',
     img: 'https://i.ibb.co/Pw2bMqB/13.jpg',
     name: 'Apple iPhone 13',
     quantity: 10,
@@ -36,7 +36,7 @@ export const CATALOG = [
     brand: 'Apple',
   },
   {
-    id: 'el1',
+    id: 'el4',
     img: 'https://i.ibb.co/smnd3QM/se.jpg',
     name: 'Apple iPhone SE',
     quantity: 12,
@@ -49,7 +49,7 @@ export const CATALOG = [
   },
 
   {
-    id: 'el1',
+    id: 'el5',
     img: 'https://i.ibb.co/2ZRPKFt/x4.jpg',
     name: ' Xiaomi Poco X4 pro',
     quantity: 1,
@@ -61,7 +61,7 @@ export const CATALOG = [
     brand: 'Xiaomi',
   },
   {
-    id: 'el1',
+    id: 'el6',
     img: 'https://i.ibb.co/BB3ZFYn/9c.jpg',
     name: 'Xiaomi Redmi 9C 3 / 64gb',
     quantity: 6,
@@ -73,7 +73,7 @@ export const CATALOG = [
     brand: 'Xiaomi',
   },
   {
-    id: 'el1',
+    id: 'el7',
     img: 'https://i.ibb.co/1qxCkvQ/note11.jpg',
     name: 'Xiaomi Redmi Note 11',
     quantity: 4,
@@ -84,7 +84,7 @@ export const CATALOG = [
     numberOfCameras: 1,
     brand: 'Xiaomi',
   }, {
-    id: 'el1',
+    id: 'el8',
     img: 'https://i.ibb.co/Lv2Sfj1/A03.png',
     name: 'Samsung Galaxy A03',
     quantity: 5,
@@ -96,7 +96,7 @@ export const CATALOG = [
     brand: 'Samsung',
   },
   {
-    id: 'el1',
+    id: 'el9',
     img: 'https://i.ibb.co/SBC19nL/S20.jpg',
     name: 'Samsung Galaxy S20',
     quantity: 3,
@@ -108,7 +108,7 @@ export const CATALOG = [
     brand: 'Samsung',
   },
   {
-    id: 'el1',
+    id: 'el10',
     img: 'https://i.ibb.co/nwvz5zV/S21.jpg',
     name: 'Samsung Galaxy S21',
     quantity: 2,

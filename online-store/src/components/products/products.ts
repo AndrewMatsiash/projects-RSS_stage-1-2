@@ -1,13 +1,54 @@
 import { CATALOG } from '../../constants/catalog';
 import { ROOT_PRODUCTS } from '../../constants/root';
+import { localStorageUtil } from '../../utils/localStorage';
 
 class Products {
-  static render():void {
+  labelAdd: string;
+
+  classNameActive:string;
+
+  labelRemove: string;
+
+  innerHTML: string | undefined;
+
+  id!: string;
+
+  constructor() {
+    this.classNameActive = 'products-element__btn_active';
+    this.labelAdd = 'Добавить в корзину';
+    this.labelRemove = 'Удалить из корзины';
+  }
+
+  handleSetLocationStorage(): void {
+    const { pushProduct } = localStorageUtil.setProducts(this.id);
+
+    if (pushProduct) {
+      this.classList.add('products-element__btn_active');
+      this.innerHTML = 'Удалить из корзины';
+    } else {
+      this.classList.remove('products-element__btn_active');
+      this.innerHTML = 'Добавить в корзину';
+    }
+  }
+
+  render(): void {
+    const productsStore = localStorageUtil.getProducts();
+
     let htmlCatalog = '';
 
     CATALOG.forEach(({
       id, name, img, popular, numberOfCameras, color, quantity, releaseDate, brand,
     }) => {
+      let activeClass = '';
+      let activeText = '';
+
+      if (productsStore.indexOf(id) === -1) {
+        activeText = this.labelAdd;
+      } else {
+        activeClass = ` ${this.classNameActive}`;
+        activeText = this.labelRemove;
+      }
+
       htmlCatalog += `
    <li class="products-element">
      <span class="products-element__name">${name}</span>
@@ -18,7 +59,9 @@ class Products {
      <span class="products-element__color">Цвет:${color}</span>
      <span class="products-element__cameras">Количество камер:${numberOfCameras}</span>
      <span class="products-element__popular">Популярный:${popular}</span>
-     <button class="products-element__btn">добавить в корзину</button>
+     <button id="${id}" class="products-element__btn${activeClass}">
+     ${activeText}
+     </button>
     </li>
             `;
     });
@@ -30,7 +73,10 @@ class Products {
         `;
 
     ROOT_PRODUCTS.innerHTML = html;
+    const buttons = document.querySelectorAll('.products-element__btn');
+    buttons.forEach((el) => el.addEventListener('click', this.handleSetLocationStorage));
   }
 }
 
-Products.render();
+const productsPage = new Products();
+productsPage.render();

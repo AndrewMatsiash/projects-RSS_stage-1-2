@@ -13,7 +13,7 @@ class LocalStorag {
     return [];
   }
 
-  setProducts(id: string) {
+  setProducts(id: string): { pushProduct: boolean, products: string[] | [] } {
     const products: [] | string[] = this.getProducts();
     const index = products.indexOf(id);
     let pushProduct = false;
@@ -21,16 +21,14 @@ class LocalStorag {
       products.push(id);
       pushProduct = true;
     } else {
-      products.slice(index, 1);
+      products.splice(index, 1);
     }
-
     localStorage.setItem(this.keyName, JSON.stringify(products));
-
     return {
       pushProduct,
       products,
     };
   }
 }
-const localStorageUtil = new LocalStorag();
-const a = localStorageUtil.getProducts();
+
+export const localStorageUtil = new LocalStorag();
