@@ -9,6 +9,8 @@ class Products {
 
   labelRemove: string;
 
+  // classList!: string;
+
   innerHTML: string | undefined;
 
   id!: string;

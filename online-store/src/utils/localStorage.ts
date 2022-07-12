@@ -5,8 +5,8 @@ class LocalStorag {
     this.keyName = 'products';
   }
 
-  getProducts() {
-    const productsLocalStorage = localStorage.getItem(this.keyName);
+  getProducts():string[] | [] {
+    const productsLocalStorage:string | null = localStorage.getItem(this.keyName);
     if (productsLocalStorage !== null) {
       return JSON.parse(productsLocalStorage);
     }
