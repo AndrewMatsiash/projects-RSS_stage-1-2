@@ -1,6 +1,7 @@
 import { CATALOG } from '../../constants/catalog';
 import { ROOT_PRODUCTS } from '../../constants/root';
 import { localStorageUtil } from '../../utils/localStorage';
+import { Header } from '../header/header';
 
 class Products {
   labelAdd: string;
@@ -22,7 +23,7 @@ class Products {
   }
 
   handleSetLocationStorage(): void {
-    const { pushProduct } = localStorageUtil.setProducts(this.id);
+    const { pushProduct, products } = localStorageUtil.setProducts(this.id);
 
     if (pushProduct) {
       this.classList.add('products-element__btn_active');
@@ -31,6 +32,7 @@ class Products {
       this.classList.remove('products-element__btn_active');
       this.innerHTML = 'Добавить в корзину';
     }
+    Header.render(products.length);
   }
 
   render(): void {
