@@ -40,9 +40,7 @@ class Products {
 
     let htmlCatalog = '';
 
-    catalog.forEach(({
-      id, name, img, popular, numberOfCameras, color, quantity, releaseDate, brand,
-    }) => {
+    catalog.forEach(({id, name, img, popular, numberOfCameras, color, quantity, releaseDate, brand}) => {
       let activeClass = '';
       let activeText = '';
 
@@ -84,5 +82,3 @@ class Products {
 
 export const productsPage = new Products();
 productsPage.render();
-console.log(CATALOG);
-

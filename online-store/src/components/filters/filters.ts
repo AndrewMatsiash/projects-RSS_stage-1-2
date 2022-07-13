@@ -1,31 +1,28 @@
 import { CATALOG } from '../../constants/catalog';
 import { productsPage } from '../products/products';
 
+const buttonsBrand = document.querySelectorAll('.btn-brand');
+
 class Filters {
-  [x: string]: any;
+  classList: any;
 
-  name = 'assas';
+  renderSortBrand():void {
+    this.classList.toggle('btn_active');
 
-  constructor() {
-    this.class = 'fdgk;sdgks';
-  }
+    const brandsForFilter:string[] = Array.from(buttonsBrand)
+      .filter((btn) => btn.classList.contains('btn_active'))
+      .map((btn) => btn.innerHTML);
 
-  renderSortBrand(el):void {
-    const elementId:string = el.id;// присваиваю переменной id нажатой кнопки
-    this.classList.toggle(elementId);// добавляю класс равный id по нажатию
-
-    if (this.classList.contains(elementId)) { // если класс есть сортирую коталог товаров по значению
-      const sortBrand = CATALOG.filter((el) => el.brand === elementId);
-      productsPage.render(sortBrand);// рендер отсортированного массива с товарами на страницу
+    if (brandsForFilter.length !== 0) {
+      const sortBrand = CATALOG.filter((el) => brandsForFilter.includes(el.brand));
+      productsPage.render(sortBrand);
     } else {
-      productsPage.render();// если класса нет то верни весь каталог
+      productsPage.render();
     }
   }
 }
 
 const filters = new Filters();
-
-const buttonsBrand = document.querySelectorAll('.btn-brand');
 
 buttonsBrand.forEach((el) => {
   el.addEventListener('click', filters.renderSortBrand);
