@@ -1,5 +1,5 @@
 
-.button{
+.btn-brand{
    background-color: transparent;
     background-position: 50%;
     background-repeat: no-repeat;
@@ -14,12 +14,43 @@
     width: 40px;
 }
 
+.filters-popular{
+  color: aliceblue;
+}
+.btn-cameras{
+  background-color: transparent;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    height: 40px;
+    margin: 10px 7px;
+    outline: 0;
+    position: relative;
+    width: 40px;
+}
+.btn-color{
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0;
+    height: 30px;
+    margin: 15px 10px;
+    outline: 0;
+    position: relative;
+    width: 30px;
+}
 
 .filters-value{
+    display: flex;
+  flex-direction: column;
   padding: 0px 10px;
 }
 
-.filters-brand{
+.filter{
   display: flex;
   align-items: center;
 }
@@ -40,3 +71,25 @@
   background-image: url('./assets/xiaomi.svg');
 }
 
+.btn-colors__white {
+  background-color: white;
+}
+.btn-calors__yellow {
+  background-color: yellow;
+}
+.btn-color__red {
+  background-color: red;
+}
+
+.btn-popular{
+   border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0;
+    height: 30px;
+    margin: 15px 10px;
+    outline: 0;
+    position: relative;
+    width: 30px;
+    background-color: rgb(111, 101, 101);
+}
