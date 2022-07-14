@@ -4,13 +4,11 @@
     "es2021": true
   },
   "extends": [
-    "airbnb-typescript/base",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended"
   ],
-  "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": "./tsconfig.json"
+    "project": "online-store/tsconfig.json"
   },
   "plugins": [
     "@typescript-eslint"

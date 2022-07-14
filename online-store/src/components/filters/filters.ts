@@ -1,25 +1,30 @@
 import { CATALOG } from '../../constants/catalog';
+import { slider, sliderElement, sliderElementQuntity, sliderQuantity} from '../../utils/noSlider';
 import { productsPage } from '../products/products';
 
 const buttonsFilterBrand = document.querySelectorAll('.btn-brand');
 const buttonsFilterColor = document.querySelectorAll('.btn-color');
 const buttonsFilterCamaras = document.querySelectorAll('.btn-cameras');
 const buttonsFilterPopular = document.querySelectorAll('.btn-popular');
-const buttonsFilter = document.querySelectorAll('.btn-filter')
-
+const buttonsFilter = document.querySelectorAll('.btn-filter');
 
 class Filters {
   classList: any;
 
-
-  filters() {
+  filters(): void {
     let catalog = CATALOG;
-    this.classList.toggle('btn_active')
+    const filterBrandArr = filters.filterValues(buttonsFilterBrand);
+    const filterByCamerasArr = filters.filterValues(buttonsFilterCamaras);
+    const filterByColorArr = filters.filterValues(buttonsFilterColor);
+    const filterByPopular = filters.filterValues(buttonsFilterPopular);
 
-    let filterBrandArr = filters.filterValues(buttonsFilterBrand)
-    let filterByCamerasArr = filters.filterValues(buttonsFilterCamaras)
-    let filterByColorArr = filters.filterValues(buttonsFilterColor)
-    let filterByPopular = filters.filterValues(buttonsFilterPopular)
+    const sliderQuantityArr= sliderQuantity.get() as number[];
+   console.log(sliderQuantityArr);
+
+    if (sliderQuantityArr[0] > 1 || sliderQuantityArr[1] < 12) {
+      catalog = catalog.filter((el) => el.quantity >= sliderQuantityArr[0] && el.quantity <= sliderQuantityArr[1]);
+      productsPage.render(catalog);
+    }
 
     if (filterBrandArr.length !== 0) {
       catalog = catalog.filter((el) => filterBrandArr.includes(el.brand));
@@ -34,20 +39,25 @@ class Filters {
       catalog = catalog.filter((el) => filterByPopular.includes(el.popular));
     }
 
-    productsPage.render(catalog)
+    productsPage.render(catalog);
   }
 
-  filterValues(buttonsFilter:NodeListOf<Element>) {
-    const forFilter: string[] = Array.from(buttonsFilter)
+  filterValues(buttonsFilter: NodeListOf<Element>) {
+    const forFilter:string[] = Array.from(buttonsFilter)
       .filter((btn) => btn.classList.contains('btn_active'))
       .map((btn) => btn.innerHTML);
-    return forFilter
+    return forFilter;
   }
-
 }
 
-const filters = new Filters();
+export const filters = new Filters();
+
+buttonsFilter.forEach((el) => {
+  el.addEventListener('click', () => { el.classList.toggle('btn_active'); });
+});
 
 buttonsFilter.forEach((el) => {
   el.addEventListener('click', filters.filters);
 });
+
+sliderElementQuntity.noUiSlider.on("update", filters.filters)

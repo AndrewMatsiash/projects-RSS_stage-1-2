@@ -11,8 +11,8 @@
 <body>
   <header class="header"></header>
   <main class="main">
-    <div class="filters">
-      <div class="filters-value">
+    <div class="filters__container">
+      <div class=" filters filters-value">
         <h3 class="filters__title">Фильтры по значению</h3>
         <div class=" filter filters-brand">
           <span>Производитель:</span>
@@ -36,7 +36,13 @@
           <span>Популярные:</span>
           <button class="btn-filter button btn-popular">да</button>
         </div>
-
+      </div>
+      <div class="filters filters-range">
+          <h3 class="filters__title">Фильтры по диапазону</h3>
+          Количество на складе:
+          <div class="slider-quantity"></div>
+          Количество камер:
+          <div class="slider2"></div>
       </div>
     </div>
     <div class="products"></div>

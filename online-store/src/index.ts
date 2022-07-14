@@ -3,4 +3,4 @@ import './utils/localStorage';
 import './components/header/header';
 import './components/filters/filters';
 import './components/products/products';
-
+import './utils/noSlider';
