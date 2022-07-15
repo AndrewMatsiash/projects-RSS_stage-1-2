@@ -27,7 +27,7 @@ export const sliderDataRelease= noUiSlider.create(sliderDataReleaseElement, {
   connect: true,
   range: {
     'min': 2000,
-    'max': 2020
+    'max': 2022
   },
   behaviour: 'tap-drag',
   tooltips: true,
