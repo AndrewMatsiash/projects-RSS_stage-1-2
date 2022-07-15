@@ -1,5 +1,5 @@
 import { CATALOG } from '../../constants/catalog';
-import { slider, sliderElement, sliderElementQuntity, sliderQuantity} from '../../utils/noSlider';
+import {sliderDataRelease, sliderDataReleaseElement, sliderElementQuntity, sliderQuantity} from '../../utils/noSlider';
 import { productsPage } from '../products/products';
 
 const buttonsFilterBrand = document.querySelectorAll('.btn-brand');
@@ -19,10 +19,17 @@ class Filters {
     const filterByPopular = filters.filterValues(buttonsFilterPopular);
 
     const sliderQuantityArr= sliderQuantity.get() as number[];
-   console.log(sliderQuantityArr);
+    const sliderDataReleaseArr= sliderDataRelease.get() as number[];
+
 
     if (sliderQuantityArr[0] > 1 || sliderQuantityArr[1] < 12) {
       catalog = catalog.filter((el) => el.quantity >= sliderQuantityArr[0] && el.quantity <= sliderQuantityArr[1]);
+      productsPage.render(catalog);
+    }
+
+
+    if (sliderDataReleaseArr[0] > 1 || sliderDataReleaseArr[1] < 12) {
+       catalog = catalog.filter((el) => el.releaseDate >= sliderDataReleaseArr[0] && el.releaseDate <= sliderDataReleaseArr[1]);
       productsPage.render(catalog);
     }
 
@@ -61,3 +68,4 @@ buttonsFilter.forEach((el) => {
 });
 
 sliderElementQuntity.noUiSlider.on("update", filters.filters)
+sliderDataReleaseElement.noUiSlider.on("update", filters.filters)
