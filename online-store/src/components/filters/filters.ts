@@ -9,6 +9,10 @@ const buttonsFilterPopular = document.querySelectorAll('.btn-popular');
 const buttonsFilter = document.querySelectorAll('.btn-filter');
 const inputSearch = document.querySelector('.search') as HTMLInputElement
 const massage = document.querySelector('.massage')
+const selectSort = document.querySelector('#select')
+
+
+
 
 
 
@@ -25,6 +29,11 @@ class Filters {
     const sliderQuantityArr = sliderQuantity.get() as number[];
     const sliderDataReleaseArr = sliderDataRelease.get() as number[];
     const keys = ['name', 'brand', 'popular', 'color',]
+
+    let selectValue = selectSort.value
+
+
+
 
 
     if (inputSearch.value !== "") {
@@ -66,6 +75,59 @@ class Filters {
       massage?.classList.add('active')
     }
 
+    switch (selectValue) {
+      case 'sortFromAtoЯ':
+        catalog = catalog.sort((a, b) => {
+          if (a.name.toLocaleLowerCase() > b.name.toLocaleLowerCase()) return 1
+          if (a.name.toLocaleLowerCase() < b.name.toLocaleLowerCase()) return -1
+          return 0
+        });
+        productsPage.render(catalog)
+        break;
+      case 'sortFromЯtoA':
+        catalog = catalog.sort((a, b) => {
+          if (b.name.toLocaleLowerCase() > a.name.toLocaleLowerCase()) return 1
+          if (b.name.toLocaleLowerCase() < a.name.toLocaleLowerCase()) return -1
+          return 0
+        });
+        productsPage.render(catalog)
+        break
+      case 'sortbyYearAscending':
+        catalog = catalog.sort((a, b) => {
+          if (a.releaseDate > b.releaseDate) return 1
+          if (a.releaseDate < b.releaseDate) return -1
+          return 0
+        });
+        productsPage.render(catalog)
+        break
+      case 'sortbyYearByAbbing':
+        catalog = catalog.sort((a, b) => {
+          if (b.releaseDate > a.releaseDate) return 1
+          if (b.releaseDate < a.releaseDate) return -1
+          return 0
+        });
+        productsPage.render(catalog)
+        break
+
+      case 'sortByNumberByAscending':
+        catalog = catalog.sort((a, b) => {
+          if (a.quantity > b.quantity) return 1
+          if (a.quantity < b.quantity) return -1
+          return 0
+        });
+        productsPage.render(catalog)
+        break
+      case 'sortByNumberByAbbing':
+        catalog = catalog.sort((a, b) => {
+          if (b.quantity > a.quantity) return 1
+          if (b.quantity < a.quantity) return -1
+          return 0
+        });
+        productsPage.render(catalog)
+      // default:
+        break;
+    }
+
 
   }
 
@@ -90,6 +152,7 @@ buttonsFilter.forEach((el) => {
   el.addEventListener('click', filters.filters);
 });
 
+selectSort?.addEventListener('change', filters.filters);
 inputSearch?.addEventListener('input', filters.filters)
 
 sliderElementQuntity.noUiSlider.on("update", filters.filters)

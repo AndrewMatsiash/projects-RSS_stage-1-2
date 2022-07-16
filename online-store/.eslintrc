@@ -8,7 +8,7 @@
     "plugin:@typescript-eslint/recommended"
   ],
   "parserOptions": {
-    "project": "online-store/tsconfig.json"
+    "project": "./tsconfig.json"
   },
   "plugins": [
     "@typescript-eslint"

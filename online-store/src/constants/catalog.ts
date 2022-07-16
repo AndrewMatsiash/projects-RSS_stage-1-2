@@ -51,7 +51,7 @@ export const CATALOG = [
   {
     id: 'el5',
     img: 'https://i.ibb.co/2ZRPKFt/x4.jpg',
-    name: ' Xiaomi Poco X4 pro',
+    name: 'Xiaomi Poco X4 pro',
     quantity: 1,
     price: 200,
     releaseDate: 2014,
