@@ -1,4 +1,5 @@
 import { CATALOG } from '../../constants/catalog';
+import {GenericObject } from '../../types/types';
 import {
   sliderDataRelease,
   sliderDataReleaseElement,
@@ -7,17 +8,15 @@ import {
 } from '../../utils/noSlider';
 import { productsPage } from '../products/products';
 
-
-
-const buttonsFilterBrand = document.querySelectorAll('.btn-brand');
-const buttonsFilterColor = document.querySelectorAll('.btn-color');
-const buttonsFilterCamaras = document.querySelectorAll('.btn-cameras');
-const buttonsFilterPopular = document.querySelectorAll('.btn-popular');
-const buttonsFilter = document.querySelectorAll('.btn-filter');
+const buttonsFilterBrand = document.querySelectorAll('.btn-brand') as NodeListOf<Element>;
+const buttonsFilterColor = document.querySelectorAll('.btn-color') as NodeListOf<Element>;
+const buttonsFilterCamaras = document.querySelectorAll('.btn-cameras') as NodeListOf<Element>;
+const buttonsFilterPopular = document.querySelectorAll('.btn-popular') as NodeListOf<Element>;
+const buttonsFilter = document.querySelectorAll('.btn-filter') as NodeListOf<Element>;
 const inputSearch = document.querySelector('.search') as HTMLInputElement;
 const massage = document.querySelector('.massage') as HTMLElement;
-const btnResetSettings = document.querySelector('.reset-settings');
-const btnResetFilters = document.querySelector('.reset-filters');
+const btnResetSettings = document.querySelector('.reset-settings') as HTMLElement;
+const btnResetFilters = document.querySelector('.reset-filters') as HTMLElement;
 const selectSort = document.querySelector('#select') as HTMLSelectElement;
 
 function addedButtonsClassActiveLocalStorage(buttons: NodeListOf<Element>, filterLocalStorageArr: string[]) {
@@ -49,15 +48,15 @@ class Filters {
   filters(): void {
     let catalog = CATALOG;
 
-    const filterBrandArr = filters.filterValues(buttonsFilterBrand);
-    const filterByCamerasArr = filters.filterValues(buttonsFilterCamaras);
-    const filterByColorArr = filters.filterValues(buttonsFilterColor);
-    const filterByPopular = filters.filterValues(buttonsFilterPopular);
+    const filterBrandArr:string[] = filters.filterValues(buttonsFilterBrand);
+    const filterByCamerasArr:string[] = filters.filterValues(buttonsFilterCamaras);
+    const filterByColorArr: string[] = filters.filterValues(buttonsFilterColor);
+    const filterByPopular: string[] = filters.filterValues(buttonsFilterPopular);
     const sliderQuantityArr = sliderQuantity.get() as number[];
     const sliderDataReleaseArr = sliderDataRelease.get() as number[];
-    const selectValue = selectSort.value
-    const inputSearchValue = inputSearch.value
-    const keys = ['name', 'brand', 'popular', 'color',]
+    const selectValue:string = selectSort.value
+    const inputSearchValue:string = inputSearch.value
+    const keys:string[]= ['name', 'brand', 'popular', 'color',]
 
     localStorage.setItem('filters', JSON.stringify({
       filterBrandArr,
@@ -72,7 +71,7 @@ class Filters {
 
     if (inputSearchValue !== "") {
       localStorage.setItem('FilterInputSearch', JSON.stringify(inputSearch.value))
-      catalog = catalog.filter(el => {
+      catalog = catalog.filter((el:GenericObject) => {
         return keys.some((key) => {
           return el[key].toLowerCase().includes(inputSearch.value.toLowerCase())
         });
@@ -186,15 +185,15 @@ buttonsFilter.forEach((el) => {
   el.addEventListener('click', filters.filters);
 });
 
-selectSort?.addEventListener('change', filters.filters);
-inputSearch?.addEventListener('input', filters.filters)
+selectSort.addEventListener('change', filters.filters);
+inputSearch.addEventListener('input', filters.filters)
 sliderElementQuntity.noUiSlider?.on("update", filters.filters)
 sliderDataReleaseElement.noUiSlider?.on("update", filters.filters)
 
 
 
 
-btnResetFilters?.addEventListener('click', () => {
+btnResetFilters.addEventListener('click', () => {
   inputSearch.value = ""
   buttonsFilter.forEach((el) => {
     el.classList.remove('btn_active')
@@ -203,15 +202,9 @@ btnResetFilters?.addEventListener('click', () => {
   sliderElementQuntity.noUiSlider?.reset();
 })
 
-btnResetSettings?.addEventListener('click', () => {
+btnResetSettings.addEventListener('click', () => {
   location.reload()
   localStorage.clear()
-  // inputSearch.value = ""
-  // buttonsFilter.forEach((el) => {
-  //   el.classList.remove('btn_active')
-  // });
-  // sliderDataReleaseElement.noUiSlider?.reset();
-  // sliderElementQuntity.noUiSlider?.reset();
 })
 
 

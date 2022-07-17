@@ -14,7 +14,7 @@ class Products {
 
   id!: string;
 
-  classList: any;
+
 
   constructor() {
     this.classNameActive = 'products-element__btn_active';
@@ -26,7 +26,7 @@ class Products {
     const { pushProduct, products } = localStorageUtil.setProducts(this.id);
 
     if (pushProduct) {
-      this.classList.add('products-element__btn_active');
+      this<Element>.classList.add('products-element__btn_active');
       this.innerHTML = 'Удалить из корзины';
     } else {
       this.classList.remove('products-element__btn_active');
