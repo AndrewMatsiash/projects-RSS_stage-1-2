@@ -16,7 +16,7 @@ const buttonsFilterPopular = document.querySelectorAll('.btn-popular');
 const buttonsFilter = document.querySelectorAll('.btn-filter');
 const inputSearch = document.querySelector('.search') as HTMLInputElement;
 const massage = document.querySelector('.massage') as HTMLElement;
-// const btnResetSettings = document.querySelector('.reset-settings');
+const btnResetSettings = document.querySelector('.reset-settings');
 const btnResetFilters = document.querySelector('.reset-filters');
 const selectSort = document.querySelector('#select') as HTMLSelectElement;
 
@@ -201,6 +201,17 @@ btnResetFilters?.addEventListener('click', () => {
   });
   sliderDataReleaseElement.noUiSlider?.reset();
   sliderElementQuntity.noUiSlider?.reset();
+})
+
+btnResetSettings?.addEventListener('click', () => {
+  location.reload()
+  localStorage.clear()
+  // inputSearch.value = ""
+  // buttonsFilter.forEach((el) => {
+  //   el.classList.remove('btn_active')
+  // });
+  // sliderDataReleaseElement.noUiSlider?.reset();
+  // sliderElementQuntity.noUiSlider?.reset();
 })
 
 
