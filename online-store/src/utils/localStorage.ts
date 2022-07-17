@@ -17,11 +17,17 @@ class LocalStorag {
     const products:string[] = this.getProducts();
     const index = products.indexOf(id);
     let pushProduct = false;
+
     if (index === -1) {
       products.push(id);
       pushProduct = true;
     } else {
       products.splice(index, 1);
+    }
+    if (products.length > 7) {
+      products.pop()
+      pushProduct = false
+      alert("Невозможно добавить товар,корзина переполнена")
     }
     localStorage.setItem(this.keyName, JSON.stringify(products));
     return {
