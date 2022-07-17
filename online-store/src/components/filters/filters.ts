@@ -3,7 +3,8 @@ import {
   sliderDataRelease,
   sliderDataReleaseElement,
   sliderElementQuntity,
-  sliderQuantity } from '../../utils/noSlider';
+  sliderQuantity
+} from '../../utils/noSlider';
 import { productsPage } from '../products/products';
 
 
@@ -16,12 +17,12 @@ const buttonsFilter = document.querySelectorAll('.btn-filter');
 const inputSearch = document.querySelector('.search') as HTMLInputElement;
 const massage = document.querySelector('.massage') as HTMLElement;
 // const btnResetSettings = document.querySelector('.reset-settings');
-// const btnResetFilters = document.querySelector('.reset-filters');
+const btnResetFilters = document.querySelector('.reset-filters');
 const selectSort = document.querySelector('#select') as HTMLSelectElement;
 
-function addedButtonsClassActiveLocalStorage(buttons: NodeListOf<Element>, filterLocalStorage: string[]) {
+function addedButtonsClassActiveLocalStorage(buttons: NodeListOf<Element>, filterLocalStorageArr: string[]) {
   Array.from(buttons)
-    .filter((el) => filterLocalStorage.includes(el.innerHTML))
+    .filter((el) => filterLocalStorageArr.includes(el.innerHTML))
     .forEach(((el) => el.classList.add('btn_active')))
 }
 
@@ -32,10 +33,10 @@ if (localStorage.getItem('filters') !== null) {
   selectSort.value = filtersLocal.selectValue
   sliderDataRelease.set(filtersLocal.sliderDataReleaseArr)
   sliderQuantity.set(filtersLocal.sliderQuantityArr)
-  addedButtonsClassActiveLocalStorage(buttonsFilterBrand,filtersLocal.filterBrandArr)
-  addedButtonsClassActiveLocalStorage(buttonsFilterCamaras,filtersLocal.filterByCamerasArr)
-  addedButtonsClassActiveLocalStorage(buttonsFilterColor,filtersLocal.filterByColorArr)
-  addedButtonsClassActiveLocalStorage(buttonsFilterPopular,filtersLocal.filterByPopular)
+  addedButtonsClassActiveLocalStorage(buttonsFilterBrand, filtersLocal.filterBrandArr)
+  addedButtonsClassActiveLocalStorage(buttonsFilterCamaras, filtersLocal.filterByCamerasArr)
+  addedButtonsClassActiveLocalStorage(buttonsFilterColor, filtersLocal.filterByColorArr)
+  addedButtonsClassActiveLocalStorage(buttonsFilterPopular, filtersLocal.filterByPopular)
 }
 
 
@@ -193,15 +194,14 @@ sliderDataReleaseElement.noUiSlider?.on("update", filters.filters)
 
 
 
-// btnResetFilters?.addEventListener('click', () => {
-//   inputSearch.value = ""
-//   buttonsFilter.forEach((el) => {
-//     el.classList.remove('btn_active')
-//   });
-//   selectSort.value = "sortFromAtoЯ"
-//   sliderDataReleaseElement.noUiSlider?.reset();
-//   sliderElementQuntity.noUiSlider?.reset();
-// })
+btnResetFilters?.addEventListener('click', () => {
+  inputSearch.value = ""
+  buttonsFilter.forEach((el) => {
+    el.classList.remove('btn_active')
+  });
+  sliderDataReleaseElement.noUiSlider?.reset();
+  sliderElementQuntity.noUiSlider?.reset();
+})
 
 
 
