@@ -1,16 +1,42 @@
 import { CATALOG } from '../../constants/catalog';
-import { sliderDataRelease, sliderDataReleaseElement, sliderElementQuntity, sliderQuantity } from '../../utils/noSlider';
+import {
+  sliderDataRelease,
+  sliderDataReleaseElement,
+  sliderElementQuntity,
+  sliderQuantity } from '../../utils/noSlider';
 import { productsPage } from '../products/products';
+
+
 
 const buttonsFilterBrand = document.querySelectorAll('.btn-brand');
 const buttonsFilterColor = document.querySelectorAll('.btn-color');
 const buttonsFilterCamaras = document.querySelectorAll('.btn-cameras');
 const buttonsFilterPopular = document.querySelectorAll('.btn-popular');
 const buttonsFilter = document.querySelectorAll('.btn-filter');
-const inputSearch = document.querySelector('.search') as HTMLInputElement
-const massage = document.querySelector('.massage')
-const selectSort = document.querySelector('#select')
+const inputSearch = document.querySelector('.search') as HTMLInputElement;
+const massage = document.querySelector('.massage') as HTMLElement;
+// const btnResetSettings = document.querySelector('.reset-settings');
+// const btnResetFilters = document.querySelector('.reset-filters');
+const selectSort = document.querySelector('#select') as HTMLSelectElement;
 
+function addedButtonsClassActiveLocalStorage(buttons: NodeListOf<Element>, filterLocalStorage: string[]) {
+  Array.from(buttons)
+    .filter((el) => filterLocalStorage.includes(el.innerHTML))
+    .forEach(((el) => el.classList.add('btn_active')))
+}
+
+
+if (localStorage.getItem('filters') !== null) {
+  const filtersLocal = JSON.parse(localStorage.getItem('filters') as string)
+  inputSearch.value = filtersLocal.inputSearchValue
+  selectSort.value = filtersLocal.selectValue
+  sliderDataRelease.set(filtersLocal.sliderDataReleaseArr)
+  sliderQuantity.set(filtersLocal.sliderQuantityArr)
+  addedButtonsClassActiveLocalStorage(buttonsFilterBrand,filtersLocal.filterBrandArr)
+  addedButtonsClassActiveLocalStorage(buttonsFilterCamaras,filtersLocal.filterByCamerasArr)
+  addedButtonsClassActiveLocalStorage(buttonsFilterColor,filtersLocal.filterByColorArr)
+  addedButtonsClassActiveLocalStorage(buttonsFilterPopular,filtersLocal.filterByPopular)
+}
 
 
 
@@ -28,15 +54,23 @@ class Filters {
     const filterByPopular = filters.filterValues(buttonsFilterPopular);
     const sliderQuantityArr = sliderQuantity.get() as number[];
     const sliderDataReleaseArr = sliderDataRelease.get() as number[];
+    const selectValue = selectSort.value
+    const inputSearchValue = inputSearch.value
     const keys = ['name', 'brand', 'popular', 'color',]
 
-    let selectValue = selectSort.value
+    localStorage.setItem('filters', JSON.stringify({
+      filterBrandArr,
+      filterByCamerasArr,
+      filterByColorArr,
+      filterByPopular,
+      sliderQuantityArr,
+      sliderDataReleaseArr,
+      selectValue,
+      inputSearchValue
+    }))
 
-
-
-
-
-    if (inputSearch.value !== "") {
+    if (inputSearchValue !== "") {
+      localStorage.setItem('FilterInputSearch', JSON.stringify(inputSearch.value))
       catalog = catalog.filter(el => {
         return keys.some((key) => {
           return el[key].toLowerCase().includes(inputSearch.value.toLowerCase())
@@ -53,8 +87,9 @@ class Filters {
     }
 
 
-    if (sliderDataReleaseArr[0] > 1 || sliderDataReleaseArr[1] < 12) {
-      catalog = catalog.filter((el) => el.releaseDate >= sliderDataReleaseArr[0] && el.releaseDate <= sliderDataReleaseArr[1]);
+    if (sliderDataReleaseArr[0] > 2000 || sliderDataReleaseArr[1] < 2022) {
+      catalog =
+        catalog.filter((el) => el.releaseDate >= sliderDataReleaseArr[0] && el.releaseDate <= sliderDataReleaseArr[1]);
       productsPage.render(catalog);
     }
 
@@ -118,19 +153,16 @@ class Filters {
         productsPage.render(catalog)
         break
       case 'sortByNumberByAbbing':
+        localStorage.setItem('FilterSlect', JSON.stringify(selectValue))
         catalog = catalog.sort((a, b) => {
           if (b.quantity > a.quantity) return 1
           if (b.quantity < a.quantity) return -1
           return 0
         });
         productsPage.render(catalog)
-      // default:
         break;
     }
-
-
   }
-
 
   filterValues(buttonsFilter: NodeListOf<Element>) {
     const forFilter: string[] = Array.from(buttonsFilter)
@@ -144,6 +176,7 @@ class Filters {
 
 export const filters = new Filters();
 
+//слушатели событий на элементы
 buttonsFilter.forEach((el) => {
   el.addEventListener('click', () => { el.classList.toggle('btn_active'); });
 });
@@ -154,22 +187,27 @@ buttonsFilter.forEach((el) => {
 
 selectSort?.addEventListener('change', filters.filters);
 inputSearch?.addEventListener('input', filters.filters)
-
-sliderElementQuntity.noUiSlider.on("update", filters.filters)
-sliderDataReleaseElement.noUiSlider.on("update", filters.filters)
-
+sliderElementQuntity.noUiSlider?.on("update", filters.filters)
+sliderDataReleaseElement.noUiSlider?.on("update", filters.filters)
 
 
 
 
+// btnResetFilters?.addEventListener('click', () => {
+//   inputSearch.value = ""
+//   buttonsFilter.forEach((el) => {
+//     el.classList.remove('btn_active')
+//   });
+//   selectSort.value = "sortFromAtoЯ"
+//   sliderDataReleaseElement.noUiSlider?.reset();
+//   sliderElementQuntity.noUiSlider?.reset();
+// })
 
 
 
 
-// const  InputFilteredCatalog = CATALOG.filter(element => Object.values(element)
-//   .some(elem => {
-//     if (typeof (elem) === 'string' && !elem.match(/\.(jpe?g|png|gif|svg)$/i))
-//       return elem.toLowerCase().includes('S'.toLowerCase())
-//   }));
+
+
+
 
 

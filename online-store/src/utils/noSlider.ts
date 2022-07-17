@@ -4,7 +4,7 @@ import 'nouislider/dist/nouislider.css';
 
 
 
-export const sliderElementQuntity = document.querySelector('.slider-quantity');
+export const sliderElementQuntity = document.querySelector('.slider-quantity') as noUiSlider.target;
 
 export const sliderQuantity = noUiSlider.create(sliderElementQuntity, {
   start: [1, 12],
@@ -20,7 +20,7 @@ export const sliderQuantity = noUiSlider.create(sliderElementQuntity, {
   }),
 });
 
-export const sliderDataReleaseElement = document.querySelector('.slider-data-release')
+export const sliderDataReleaseElement = document.querySelector('.slider-data-release') as noUiSlider.target
 
 export const sliderDataRelease= noUiSlider.create(sliderDataReleaseElement, {
   start: [2000,2022],
