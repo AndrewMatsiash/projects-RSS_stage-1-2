@@ -5,13 +5,14 @@
   width: 80%;
   max-width: 1200px;
   margin: var(--spacing-large) auto;
+   line-height: 1.7;
 }
 .products-element {
   display: flex;
   text-align: center;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 25px 20px;
+  padding: 10px 18px;
   border-radius: var(--border-radius);
   background-color: var(--color-white);
   box-shadow: var(--box-shadow);
