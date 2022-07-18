@@ -113,6 +113,8 @@ class Filters {
 
     if (catalog.length === 0) {
       massage?.classList.add('active')
+    }else{
+      massage.classList.remove('active')
     }
 
     switch (selectValue) {

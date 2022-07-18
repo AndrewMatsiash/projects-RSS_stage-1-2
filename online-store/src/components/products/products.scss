@@ -1,7 +1,7 @@
 .products-container {
   display: grid;
   grid-gap: 45px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 0.2fr));
+  grid-template-columns: repeat(auto-fit, minmax(190px, 0.2fr));
   width: 80%;
   max-width: 1200px;
   margin: var(--spacing-large) auto;
@@ -52,6 +52,9 @@
   display: none;
 }
 .massage.active{
+  font-size: 40px;
+  text-align: center;
+  padding-top: 50px;
   color: #fff;
   display: block;
 }
