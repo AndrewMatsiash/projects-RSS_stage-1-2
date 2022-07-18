@@ -1,6 +1,7 @@
 @import "./components/header/header.scss";
 @import "./components/filters/filters.scss";
 @import "./components/products/products.scss";
+@import "./utils/noUiSlider.scss";
 
 :root {
 	--color-light: #257dd5;
@@ -22,7 +23,10 @@
 		0 6px 30px 5px rgba(33,37,41,.04),
 		0 8px 10px -5px rgba(33,37,41,.1);
 }
-
+p{
+  margin: 0;
+  padding: 0;
+}
 
 li {
   list-style: none;
@@ -38,4 +42,5 @@ body {
   font-family: sans-serif;
   line-height: 1.7;
   background-color: var(--color-light);
+  font-family: Arial, sans-serif;
 }

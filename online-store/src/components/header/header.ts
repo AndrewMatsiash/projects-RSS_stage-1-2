@@ -6,7 +6,7 @@ export class Header {
     const html = `
 <div class="header-container">
 <div class="logo">📱MobileStore</div>
-<div class="header-counter"> 🗑${count} </div>
+<div class="header-counter"> 🛒${count} </div>
 </div>
 `;
 

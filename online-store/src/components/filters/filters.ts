@@ -1,5 +1,5 @@
 import { CATALOG } from '../../constants/catalog';
-import {GenericObject } from '../../types/types';
+import { GenericObject } from '../../types/types';
 import {
   sliderDataRelease,
   sliderDataReleaseElement,
@@ -15,9 +15,10 @@ const buttonsFilterPopular = document.querySelectorAll('.btn-popular') as NodeLi
 const buttonsFilter = document.querySelectorAll('.btn-filter') as NodeListOf<Element>;
 const inputSearch = document.querySelector('.search') as HTMLInputElement;
 const massage = document.querySelector('.massage') as HTMLElement;
-const btnResetSettings = document.querySelector('.reset-settings') as HTMLElement;
-const btnResetFilters = document.querySelector('.reset-filters') as HTMLElement;
+const btnResetSettings = document.querySelector('.btn-reset-settings') as HTMLElement;
+const btnResetFilters = document.querySelector('.btn-reset-filters') as HTMLElement;
 const selectSort = document.querySelector('#select') as HTMLSelectElement;
+const clearBtnInput = document.querySelector('.clear-btn') as HTMLElement
 
 function addedButtonsClassActiveLocalStorage(buttons: NodeListOf<Element>, filterLocalStorageArr: string[]) {
   Array.from(buttons)
@@ -48,15 +49,15 @@ class Filters {
   filters(): void {
     let catalog = CATALOG;
 
-    const filterBrandArr:string[] = filters.filterValues(buttonsFilterBrand);
-    const filterByCamerasArr:string[] = filters.filterValues(buttonsFilterCamaras);
+    const filterBrandArr: string[] = filters.filterValues(buttonsFilterBrand);
+    const filterByCamerasArr: string[] = filters.filterValues(buttonsFilterCamaras);
     const filterByColorArr: string[] = filters.filterValues(buttonsFilterColor);
     const filterByPopular: string[] = filters.filterValues(buttonsFilterPopular);
     const sliderQuantityArr = sliderQuantity.get() as number[];
     const sliderDataReleaseArr = sliderDataRelease.get() as number[];
-    const selectValue:string = selectSort.value
-    const inputSearchValue:string = inputSearch.value
-    const keys:string[]= ['name', 'brand', 'popular', 'color',]
+    const selectValue: string = selectSort.value
+    const inputSearchValue: string = inputSearch.value
+    const keys: string[] = ['name', 'brand', 'popular', 'color',]
 
     localStorage.setItem('filters', JSON.stringify({
       filterBrandArr,
@@ -70,14 +71,18 @@ class Filters {
     }))
 
     if (inputSearchValue !== "") {
+      inputSearch.classList.add('noImg')
+      clearBtnInput.classList.add('btn_active')
       localStorage.setItem('FilterInputSearch', JSON.stringify(inputSearch.value))
-      catalog = catalog.filter((el:GenericObject) => {
+      catalog = catalog.filter((el: GenericObject) => {
         return keys.some((key) => {
           return el[key].toLowerCase().includes(inputSearch.value.toLowerCase())
         });
       });
-
       productsPage.render(catalog)
+    } else {
+      inputSearch.classList.remove('noImg')
+      clearBtnInput.classList.remove('btn_active')
     }
 
 
@@ -207,8 +212,10 @@ btnResetSettings.addEventListener('click', () => {
   localStorage.clear()
 })
 
+clearBtnInput.addEventListener('click',()=> inputSearch.value = "")
+clearBtnInput.addEventListener('click',filters.filters)
 
-
+console.log(inputSearch.value);
 
 
 
