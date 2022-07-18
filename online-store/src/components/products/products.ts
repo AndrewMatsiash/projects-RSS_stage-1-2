@@ -10,7 +10,9 @@ class Products {
   labelRemove: string;
   innerHTML: string | undefined;
   id!: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   classList: any;
+
 
   constructor() {
     this.classNameActive = 'products-element__btn_active';
@@ -21,7 +23,6 @@ class Products {
   handleSetLocationStorage(): void {
     const { pushProduct, products } = localStorageUtil.setProducts(this.id);
 
-
     if (pushProduct) {
       this.classList.add('products-element__btn_active');
       this.innerHTML = 'Удалить из корзины';
@@ -29,7 +30,6 @@ class Products {
       this.classList.remove('products-element__btn_active');
       this.innerHTML = 'Добавить в корзину';
     }
-
     Header.render(products.length);
   }
 

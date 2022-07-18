@@ -1,11 +1,10 @@
 footer {
   padding: 0 15px;
   color: #fff;
-    height: 100px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
 }
 
 footer .logo-rsschool {
@@ -23,7 +22,3 @@ footer .footer__year a {
     font-size: 1em;
 }
 
-
-footer.logo-rsschool:hover {
-    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
-}

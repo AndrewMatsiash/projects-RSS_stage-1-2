@@ -20,6 +20,7 @@ const btnResetFilters = document.querySelector('.btn-reset-filters') as HTMLElem
 const selectSort = document.querySelector('#select') as HTMLSelectElement;
 const clearBtnInput = document.querySelector('.clear-btn') as HTMLElement
 
+//фукция присваивает активный  класс кнопкам по данным из локального хранилища
 function addedButtonsClassActiveLocalStorage(buttons: NodeListOf<Element>, filterLocalStorageArr: string[]) {
   Array.from(buttons)
     .filter((el) => filterLocalStorageArr.includes(el.innerHTML))
@@ -28,7 +29,7 @@ function addedButtonsClassActiveLocalStorage(buttons: NodeListOf<Element>, filte
 
 inputSearch.focus()
 
-
+//проверка локального хранилища
 if (localStorage.getItem('filters') !== null) {
   const filtersLocal = JSON.parse(localStorage.getItem('filters') as string)
   inputSearch.value = filtersLocal.inputSearchValue
@@ -41,16 +42,11 @@ if (localStorage.getItem('filters') !== null) {
   addedButtonsClassActiveLocalStorage(buttonsFilterPopular, filtersLocal.filterByPopular)
 }
 
-
-
-
-
 class Filters {
-  classList: any;
 
-  filters(): void {
+  filters(): void {//главная функция фильтрации каталога товаров
     let catalog = CATALOG;
-
+    //получение  параметров для дальнейшей фильтрации
     const filterBrandArr: string[] = filters.filterValues(buttonsFilterBrand);
     const filterByCamerasArr: string[] = filters.filterValues(buttonsFilterCamaras);
     const filterByColorArr: string[] = filters.filterValues(buttonsFilterColor);
@@ -61,7 +57,7 @@ class Filters {
     const inputSearchValue: string = inputSearch.value
     const keys: string[] = ['name', 'brand', 'popular', 'color',]
 
-    localStorage.setItem('filters', JSON.stringify({
+    localStorage.setItem('filters', JSON.stringify({//добавлние настроек в локальное хранилище
       filterBrandArr,
       filterByCamerasArr,
       filterByColorArr,
@@ -87,12 +83,10 @@ class Filters {
       clearBtnInput.classList.remove('btn_active')
     }
 
-
     if (sliderQuantityArr[0] > 1 || sliderQuantityArr[1] < 12) {
       catalog = catalog.filter((el) => el.quantity >= sliderQuantityArr[0] && el.quantity <= sliderQuantityArr[1]);
       productsPage.render(catalog);
     }
-
 
     if (sliderDataReleaseArr[0] > 2000 || sliderDataReleaseArr[1] < 2022) {
       catalog =
@@ -173,13 +167,12 @@ class Filters {
     }
   }
 
-  filterValues(buttonsFilter: NodeListOf<Element>) {
+  filterValues(buttonsFilter: NodeListOf<Element>) {//сортировка по значениям
     const forFilter: string[] = Array.from(buttonsFilter)
       .filter((btn) => btn.classList.contains('btn_active'))
       .map((btn) => btn.innerHTML);
     return forFilter;
   }
-
 
 }
 
@@ -198,9 +191,6 @@ selectSort.addEventListener('change', filters.filters);
 inputSearch.addEventListener('input', filters.filters)
 sliderElementQuntity.noUiSlider?.on("update", filters.filters)
 sliderDataReleaseElement.noUiSlider?.on("update", filters.filters)
-
-
-
 
 btnResetFilters.addEventListener('click', () => {
   inputSearch.value = ""
