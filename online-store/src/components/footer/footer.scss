@@ -1,0 +1,29 @@
+footer {
+  padding: 0 15px;
+  color: #fff;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+footer .logo-rsschool {
+    background-image: url(./assets/rss.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 40px;
+    width: 100px;
+    margin: 0 30px 0 30px ;
+}
+
+footer .footer__year a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1em;
+}
+
+
+footer.logo-rsschool:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}

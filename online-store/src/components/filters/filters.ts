@@ -26,6 +26,8 @@ function addedButtonsClassActiveLocalStorage(buttons: NodeListOf<Element>, filte
     .forEach(((el) => el.classList.add('btn_active')))
 }
 
+inputSearch.focus()
+
 
 if (localStorage.getItem('filters') !== null) {
   const filtersLocal = JSON.parse(localStorage.getItem('filters') as string)
@@ -217,7 +219,7 @@ btnResetSettings.addEventListener('click', () => {
 clearBtnInput.addEventListener('click',()=> inputSearch.value = "")
 clearBtnInput.addEventListener('click',filters.filters)
 
-console.log(inputSearch.value);
+
 
 
 

@@ -171,7 +171,7 @@
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   background-color: rgba(19, 20, 21, 0.3);
-  border: 1px solid #278d9f;
+  border: 1px solid #f9f9f9;
   border-radius: 20px;
   padding-left: 20px;
   position: relative;
@@ -228,4 +228,8 @@
 
 .clear-btn.btn_active {
   display: block;
+}
+
+.buttons-reset_wrapper{
+  margin-top: auto;
 }
