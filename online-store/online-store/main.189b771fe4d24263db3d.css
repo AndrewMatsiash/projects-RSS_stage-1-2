@@ -1,0 +1,306 @@
+/* Functional styling;
+ * These styles are required for noUiSlider to function.
+ * You don't need to change these rules to apply your design.
+ */
+.noUi-target,
+.noUi-target * {
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-user-select: none;
+  -ms-touch-action: none;
+  touch-action: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.noUi-target {
+  position: relative;
+}
+.noUi-base,
+.noUi-connects {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+/* Wrapper for all connect elements.
+ */
+.noUi-connects {
+  overflow: hidden;
+  z-index: 0;
+}
+.noUi-connect,
+.noUi-origin {
+  will-change: transform;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  -ms-transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  -webkit-transform-style: preserve-3d;
+  transform-origin: 0 0;
+  transform-style: flat;
+}
+/* Offset direction
+ */
+.noUi-txt-dir-rtl.noUi-horizontal .noUi-origin {
+  left: 0;
+  right: auto;
+}
+/* Give origins 0 height/width so they don't interfere with clicking the
+ * connect elements.
+ */
+.noUi-vertical .noUi-origin {
+  top: -100%;
+  width: 0;
+}
+.noUi-horizontal .noUi-origin {
+  height: 0;
+}
+.noUi-handle {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+}
+.noUi-touch-area {
+  height: 100%;
+  width: 100%;
+}
+.noUi-state-tap .noUi-connect,
+.noUi-state-tap .noUi-origin {
+  -webkit-transition: transform 0.3s;
+  transition: transform 0.3s;
+}
+.noUi-state-drag * {
+  cursor: inherit !important;
+}
+/* Slider size and handle placement;
+ */
+.noUi-horizontal {
+  height: 18px;
+}
+.noUi-horizontal .noUi-handle {
+  width: 34px;
+  height: 28px;
+  right: -17px;
+  top: -6px;
+}
+.noUi-vertical {
+  width: 18px;
+}
+.noUi-vertical .noUi-handle {
+  width: 28px;
+  height: 34px;
+  right: -6px;
+  bottom: -17px;
+}
+.noUi-txt-dir-rtl.noUi-horizontal .noUi-handle {
+  left: -17px;
+  right: auto;
+}
+/* Styling;
+ * Giving the connect element a border radius causes issues with using transform: scale
+ */
+.noUi-target {
+  background: #FAFAFA;
+  border-radius: 4px;
+  border: 1px solid #D3D3D3;
+  box-shadow: inset 0 1px 1px #F0F0F0, 0 3px 6px -5px #BBB;
+}
+.noUi-connects {
+  border-radius: 3px;
+}
+.noUi-connect {
+  background: #3FB8AF;
+}
+/* Handles and cursors;
+ */
+.noUi-draggable {
+  cursor: ew-resize;
+}
+.noUi-vertical .noUi-draggable {
+  cursor: ns-resize;
+}
+.noUi-handle {
+  border: 1px solid #D9D9D9;
+  border-radius: 3px;
+  background: #FFF;
+  cursor: default;
+  box-shadow: inset 0 0 1px #FFF, inset 0 1px 7px #EBEBEB, 0 3px 6px -3px #BBB;
+}
+.noUi-active {
+  box-shadow: inset 0 0 1px #FFF, inset 0 1px 7px #DDD, 0 3px 6px -3px #BBB;
+}
+/* Handle stripes;
+ */
+.noUi-handle:before,
+.noUi-handle:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 14px;
+  width: 1px;
+  background: #E8E7E6;
+  left: 14px;
+  top: 6px;
+}
+.noUi-handle:after {
+  left: 17px;
+}
+.noUi-vertical .noUi-handle:before,
+.noUi-vertical .noUi-handle:after {
+  width: 14px;
+  height: 1px;
+  left: 6px;
+  top: 14px;
+}
+.noUi-vertical .noUi-handle:after {
+  top: 17px;
+}
+/* Disabled state;
+ */
+[disabled] .noUi-connect {
+  background: #B8B8B8;
+}
+[disabled].noUi-target,
+[disabled].noUi-handle,
+[disabled] .noUi-handle {
+  cursor: not-allowed;
+}
+/* Base;
+ *
+ */
+.noUi-pips,
+.noUi-pips * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.noUi-pips {
+  position: absolute;
+  color: #999;
+}
+/* Values;
+ *
+ */
+.noUi-value {
+  position: absolute;
+  white-space: nowrap;
+  text-align: center;
+}
+.noUi-value-sub {
+  color: #ccc;
+  font-size: 10px;
+}
+/* Markings;
+ *
+ */
+.noUi-marker {
+  position: absolute;
+  background: #CCC;
+}
+.noUi-marker-sub {
+  background: #AAA;
+}
+.noUi-marker-large {
+  background: #AAA;
+}
+/* Horizontal layout;
+ *
+ */
+.noUi-pips-horizontal {
+  padding: 10px 0;
+  height: 80px;
+  top: 100%;
+  left: 0;
+  width: 100%;
+}
+.noUi-value-horizontal {
+  -webkit-transform: translate(-50%, 50%);
+  transform: translate(-50%, 50%);
+}
+.noUi-rtl .noUi-value-horizontal {
+  -webkit-transform: translate(50%, 50%);
+  transform: translate(50%, 50%);
+}
+.noUi-marker-horizontal.noUi-marker {
+  margin-left: -1px;
+  width: 2px;
+  height: 5px;
+}
+.noUi-marker-horizontal.noUi-marker-sub {
+  height: 10px;
+}
+.noUi-marker-horizontal.noUi-marker-large {
+  height: 15px;
+}
+/* Vertical layout;
+ *
+ */
+.noUi-pips-vertical {
+  padding: 0 10px;
+  height: 100%;
+  top: 0;
+  left: 100%;
+}
+.noUi-value-vertical {
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  padding-left: 25px;
+}
+.noUi-rtl .noUi-value-vertical {
+  -webkit-transform: translate(0, 50%);
+  transform: translate(0, 50%);
+}
+.noUi-marker-vertical.noUi-marker {
+  width: 5px;
+  height: 2px;
+  margin-top: -1px;
+}
+.noUi-marker-vertical.noUi-marker-sub {
+  width: 10px;
+}
+.noUi-marker-vertical.noUi-marker-large {
+  width: 15px;
+}
+.noUi-tooltip {
+  display: block;
+  position: absolute;
+  border: 1px solid #D9D9D9;
+  border-radius: 3px;
+  background: #fff;
+  color: #000;
+  padding: 5px;
+  text-align: center;
+  white-space: nowrap;
+}
+.noUi-horizontal .noUi-tooltip {
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  left: 50%;
+  bottom: 120%;
+}
+.noUi-vertical .noUi-tooltip {
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  top: 50%;
+  right: 120%;
+}
+.noUi-horizontal .noUi-origin > .noUi-tooltip {
+  -webkit-transform: translate(50%, 0);
+  transform: translate(50%, 0);
+  left: auto;
+  bottom: 10px;
+}
+.noUi-vertical .noUi-origin > .noUi-tooltip {
+  -webkit-transform: translate(0, -18px);
+  transform: translate(0, -18px);
+  top: auto;
+  right: 28px;
+}
+
+.header-container{font-size:25px;display:flex;align-items:center;height:50px;padding:var(--spacing-small);background-color:var(--color-medium);margin-bottom:25px}.header-counter{margin-left:auto;padding-right:var(--spacing-small);font-weight:bold;cursor:pointer}.btn-brand{background-color:rgba(0,0,0,0);background-position:50%;background-repeat:no-repeat;background-size:contain;border:0;cursor:pointer;font-size:0;height:30px;margin:10px 7px;outline:0;position:relative;width:40px}.filters-popular{color:#f0f8ff}.btn-cameras{background-color:rgba(0,0,0,0);background-position:50%;background-repeat:no-repeat;background-size:contain;border:2px solid #fff;border-radius:50%;color:#fff;cursor:pointer;height:40px;margin:10px 7px;outline:0;position:relative;width:40px}.btn-color{border:2px solid;border-radius:5px;cursor:pointer;font-size:0;height:30px;margin:15px 10px;outline:0;position:relative;width:30px;-webkit-transition:box-shadow 300ms ease-in-out,color 300ms ease-in-out;transition:box-shadow 300ms ease-in-out,color 300ms ease-in-out}.filters__container{padding:0 15px;width:100%;display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:20px 20px;margin:0 auto}.filters{color:#fff;display:flex;flex-direction:column;padding:0px 10px;border-radius:31px;box-shadow:-1px 0px 50px 5px #e1d5d5}.filters .filter-tittle{margin:0;padding:0}.btn_active{filter:invert(9%) sepia(63%) saturate(461%) hue-rotate(322deg) brightness(83%) contrast(88%);transform:scale(1.1)}.btn-samsung{background-image:url(assets/e555f7f5f7015817eef5.svg)}.btn-apple{background-image:url(assets/28c40b10ca96b95867f4.svg)}.btn-xiaomi{background-image:url(assets/7a6cbd5061b8996276f3.svg)}.btn-colors__white{background-color:rgba(0,0,0,0);border-color:#fff;filter:none}.btn-colors__white:hover{box-shadow:0 0 40px 40px #fff inset}.btn-colors__white.btn_active{background-color:#fff}.btn-calors__yellow{background-color:rgba(0,0,0,0);border-color:#ff0}.btn-calors__yellow:hover{box-shadow:0 0 40px 40px #f7d200 inset}.btn-calors__yellow.btn_active{filter:none;background-color:#ff0}.btn-color__red{background-color:rgba(0,0,0,0);border-color:red}.btn-color__red:hover{box-shadow:0 0 40px 40px #e74c3c inset}.btn-color__red.btn_active{filter:none;background-color:red}.btn-popular{border:0;border-radius:5px;cursor:pointer;font-size:0;height:30px;margin:15px 10px;outline:0;position:relative;width:30px;background-color:#6f6565}.btn-popular.btn_active{filter:none}.btn-popular.btn_active::before{position:absolute;bottom:-7px;right:0px;content:"✅";display:block;font-size:32px}.filters-range{text-align:center}.search{background-color:rgba(0,0,0,0);background-image:url(assets/34d5c2d6ef9d1d77b576.svg);background-position:calc(100% - 20px);background-repeat:no-repeat;background-size:20px;border:0;color:#fff;font-size:18px;height:40px;margin-right:0;width:100%}.search.noImg{background-image:none}.search:focus-visible{outline:none}.search-wrapper{-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);background-color:rgba(19,20,21,.3);border:1px solid #f9f9f9;border-radius:20px;padding-left:20px;position:relative}#select{margin-bottom:50px}.btn-reset-filters,.btn-reset-settings{appearance:none;background-color:rgba(0,0,0,0);border:2px solid #fff;border-radius:.6em;color:#e74c3c;cursor:pointer;display:flex;align-self:center;font-size:1rem;font-weight:400;line-height:1;margin-bottom:20px;padding:1em 1em;text-decoration:none;text-align:center;text-transform:uppercase;font-family:"Montserrat",sans-serif;font-weight:700;color:#fff}.btn-reset-filters:hover,.btn-reset-settings:hover{box-shadow:0 0 10px 0 #f12c00 inset,0 0 10px 4px #eb1010}.buttons-reset_wrapper{display:flex;justify-content:center;gap:0 10px}.clear-btn{display:none;background-image:url(assets/41bc72cedf62261e258c.svg);background-repeat:no-repeat;background-size:20px;cursor:pointer;font-size:0;height:20px;position:absolute;right:18px;top:12px;width:20px}.clear-btn.btn_active{display:block}.buttons-reset_wrapper{margin-top:auto}.products-container{display:grid;grid-gap:45px;grid-template-columns:repeat(auto-fit, minmax(190px, 0.2fr));width:80%;max-width:1200px;margin:var(--spacing-large) auto;line-height:1.7}.products-element{display:flex;text-align:center;flex-direction:column;justify-content:flex-end;padding:10px 18px;border-radius:var(--border-radius);background-color:var(--color-white);box-shadow:var(--box-shadow);font-size:.7em}.products-element__name{margin-bottom:auto;text-transform:uppercase;font-weight:bold}.products-element__img{width:100%;height:130px;margin-top:var(--spacing-medium);object-fit:contain}.products-element__price{margin-top:var(--spacing-medium);color:var(--color-unaccent)}.products-element__btn{margin-top:var(--spacing-medium);padding:var(--spacing-small) var(--spacing-medium);border:1px solid var(--color-unaccent);border-radius:var(--border-radius);cursor:pointer;outline:none;background:none;font-family:inherit;font-size:inherit}.products-element__btn_active{border:1px solid rgba(0,0,0,0);background-image:var(--linear-gradient)}.massage{display:none}.massage.active{font-size:40px;text-align:center;padding-top:50px;color:#fff;display:block}.slider-area{margin-bottom:50px}.slider-area .slider-title{font-size:16px;font-weight:bold}.slider-area-wrapper{display:flex;align-items:center;width:100%;column-gap:20px}.slider-area #skip-value-lower,.slider-area #skip-value-upper{font-size:16px;font-weight:bold;display:flex;align-items:center;justify-content:center}.slider-area .noUi-target{flex:1;position:relative;background:#e3e3e3;border-radius:50px}.slider-area .noUi-target.noUi-horizontal{height:10px}.slider-area .noUi-target .noUi-base,.slider-area .noUi-target .noUi-connects{width:100%;height:100%;position:relative;z-index:1}.slider-area .noUi-target .noUi-connects{border-radius:3px;overflow:hidden;z-index:0}.slider-area .noUi-target .noUi-connects .noUi-connect{height:100%;width:100%;transform-style:preserve-3d;transform-origin:0 0;transform-style:flat;background-color:#3ea8ff}.slider-area .noUi-target .noUi-origin{will-change:transform;position:absolute;z-index:1;top:0;right:0;height:0;width:100%}.slider-area .noUi-target .noUi-origin .noUi-handle{border-radius:50px;background:#fff;cursor:default;background-color:#3ea8ff;backface-visibility:hidden;position:absolute;width:21px;height:21px;right:-10px;top:-6px}.slider-area .noUi-target .noUi-origin .noUi-handle .noUi-touch-area{cursor:pointer;height:100%;width:100%}.slider-area .noUi-handle.noUi-active{transform:scale(1.4);background-color:#d61a1a !important}.slider-area .noUi-draggable{cursor:ew-resize}.noUi-handle:before,.noUi-handle:after{content:"";display:block;position:absolute;height:14px;width:1px;background:rgba(0,0,0,0);left:14px;top:6px}footer{padding:0 15px;color:#fff;height:50px;display:flex;align-items:center;justify-content:space-between}footer .logo-rsschool{background-image:url(assets/2418248d4ccd4e7738a4.svg);background-repeat:no-repeat;background-size:contain;height:40px;width:100px;margin:0 30px 0 30px}footer .footer__year a{text-decoration:none;color:#fff;font-size:1em}:root{--color-light: #257dd5;--color-medium: #e8e8e8;--color-dark: #a1a1a1;--color-unaccent: #808080;--color-white: #fff;--color-error-light: #f26b6b;--color-error-dark: #d65c5c;--spacing-small: 10px;--spacing-medium: 15px;--spacing-large: 30px;--border-radius: 3px;--linear-gradient: linear-gradient(to right, #e2f87c, #d6f567, #c8f151, #b9ee38, #a8eb12);--box-shadow: 0 16px 24px 2px rgba(33,37,41,.02), 0 6px 30px 5px rgba(33,37,41,.04), 0 8px 10px -5px rgba(33,37,41,.1)}p{margin:0;padding:0}li{list-style:none}*{box-sizing:border-box}html{height:100%}body{display:flex;flex-direction:column;height:100%;background-position:center;background-repeat:no-repeat;background-size:cover;margin:0;padding:0;font-family:sans-serif;background-color:#000;font-family:Arial,sans-serif}header{flex:0 0 auto}main{flex:1 0 auto}footer{flex:0 0 auto}
