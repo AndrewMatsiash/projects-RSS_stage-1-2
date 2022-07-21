@@ -10,8 +10,8 @@ class Products {
   labelRemove: string;
   innerHTML: string | undefined;
   id!: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  classList: any;
+
+  classList!: DOMTokenList
 
 
   constructor() {
