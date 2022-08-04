@@ -1,6 +1,6 @@
 export const renderImg = (color: string) => `<svg class="icon-car"><use xlink:href="sprite.svg#car" fill="${color}"></use></svg>`;
 
-export const renderCar = ({ id, name, color }) => {
+export const renderCar = ({ id, name, color }:ICar) => {
   const carHtml = `
 <div class="general-buttons">
   <button class="button select-btn color" id="select-car-${id}">select</button>

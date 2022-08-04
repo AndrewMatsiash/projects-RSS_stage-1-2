@@ -6,7 +6,7 @@ export const updateStateGarage = async () => {
   globalState.cars = items;
   globalState.carsCount = count;
 
-  if (globalState.garagePage * 7 < globalState.carsCount){
+  if (globalState.garagePage * 7 < Number(globalState.carsCount)){
     const nextBtn = document.getElementById('next-btn') as HTMLButtonElement
     nextBtn.disabled = false;
   } else {

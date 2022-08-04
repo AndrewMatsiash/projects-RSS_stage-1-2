@@ -6,17 +6,18 @@ export const render = () => {
   ${renderMenu()}
    <form class="form" id="create">
       <input type="text" id="create-name" name="name" value="">
-      <input type="color" id="create-color" name="color" value="#fff">
+      <input type="color" id="create-color" name="color" value="#ffffff">
       <button class="button create-btn" type="submit" id="create-btn">create</button>
     </form>
     <form class="form" id="update">
       <input type="text" id="update-name" name="name" disabled value="">
-      <input type="color" id="update-color" name="color" disabled value="#fff">
+      <input type="color" id="update-color" name="color" disabled value="#ffffff">
       <button class="button update-btn" type="submit" disabled  id="update-btn">update</button>
     </form>
     <div class="race-controls">
       <button class="button race-btn" id="race">Race</button>
       <button class="button reset-btn" id="reset">Reset</button>
+      <button class="button reset-btn" id="reset">generation cars</button>
     </div>
   <div class="garage-wrapper" id="garage">
 ${renderGarage()}
