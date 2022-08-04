@@ -1,6 +1,7 @@
 import { createCar } from "../request/createCar";
 import { deleteCar } from "../request/deletCar";
 import { getCar } from "../request/getCar";
+import { updateCar } from "../request/updateCar";
 import { renderGarage } from "./garage/garage";
 import { updateStateGarage } from "./garage/updateGarage";
 
@@ -48,6 +49,15 @@ export const listen = () => {
         formUpdate.disabled = false;
         formUpdateColor.disabled = false;
         formUpdateBtn.disabled = false;
+      }
+      if (event.target.classList.contains("update-btn")) {
+        const formUpdate = document.getElementById(('update-name')) as HTMLFormElement
+        let idCar = formUpdate.dataset.id
+        await updateCar(getDateOfForm('update'), Number(idCar))
+        await updateStateGarage()
+        const ROOT_GARAGE = document.querySelector('.garage-wrapper') as HTMLElement;
+        ROOT_GARAGE.innerHTML = renderGarage()
+
       }
     }
   })
