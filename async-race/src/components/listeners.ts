@@ -70,7 +70,11 @@ export const listen = () => {
       }
       if (event.target.classList.contains("prev-btn")) {
         globalState.garagePage -= 1
-        const carsPage = await getCars(globalState.garagePage)
+        const carsPage = await getCars(globalState.garagePage);
+
+
+        console.log(carsPage);
+
         await updateStateGarage()
         const ROOT_GARAGE = document.querySelector('.garage-wrapper') as HTMLElement;
         ROOT_GARAGE.innerHTML = renderGarage()
