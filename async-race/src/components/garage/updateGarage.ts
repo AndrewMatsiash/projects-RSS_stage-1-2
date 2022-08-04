@@ -1,16 +1,23 @@
+import { getCars } from "../../request/getCars";
+import globalState from "../globalState";
 
 export const updateStateGarage = async () => {
   const { items, count } = await getCars(globalState.garagePage);
   globalState.cars = items;
   globalState.carsCount = count;
 
-  if (globalState.garagePage * 7 < globalState.carsCount) {
-    document.getElementById('next-btn').disabled = false;
+  if (globalState.garagePage * 7 < globalState.carsCount){
+    const nextBtn = document.getElementById('next-btn') as HTMLButtonElement
+    nextBtn.disabled = false;
   } else {
-    document.getElementById('next-btn').disabled = true
+    const nextBtn = document.getElementById('next-btn') as HTMLButtonElement
+    nextBtn.disabled = true
   }
   if (globalState.garagePage > 1) {
-    document.getElementById('prev-btn').disabled = false;
+    const nextBtn = document.getElementById('prev-btn') as HTMLButtonElement
+    nextBtn.disabled = false;
   } else {
-    document.getElementById('prev-btn').disabled = true;
-  };
+    const nextBtn = document.getElementById('prev-btn') as HTMLButtonElement
+    nextBtn.disabled = true;
+  }
+}

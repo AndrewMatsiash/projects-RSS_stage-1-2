@@ -1,9 +1,11 @@
 import { createCar } from "../request/createCar";
 import { deleteCar } from "../request/deletCar";
 import { getCar } from "../request/getCar";
+import { getCars } from "../request/getCars";
 import { updateCar } from "../request/updateCar";
 import { renderGarage } from "./garage/garage";
 import { updateStateGarage } from "./garage/updateGarage";
+import globalState from "./globalState";
 
 
 
@@ -54,6 +56,21 @@ export const listen = () => {
         const formUpdate = document.getElementById(('update-name')) as HTMLFormElement
         let idCar = formUpdate.dataset.id
         await updateCar(getDateOfForm('update'), Number(idCar))
+        await updateStateGarage()
+        const ROOT_GARAGE = document.querySelector('.garage-wrapper') as HTMLElement;
+        ROOT_GARAGE.innerHTML = renderGarage()
+      }
+      if (event.target.classList.contains("next-btn")) {
+        globalState.garagePage += 1
+        const carsPage = await getCars(globalState.garagePage)
+        await updateStateGarage()
+        const ROOT_GARAGE = document.querySelector('.garage-wrapper') as HTMLElement;
+        ROOT_GARAGE.innerHTML = renderGarage()
+
+      }
+      if (event.target.classList.contains("prev-btn")) {
+        globalState.garagePage -= 1
+        const carsPage = await getCars(globalState.garagePage)
         await updateStateGarage()
         const ROOT_GARAGE = document.querySelector('.garage-wrapper') as HTMLElement;
         ROOT_GARAGE.innerHTML = renderGarage()
