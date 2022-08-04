@@ -1,3 +1,4 @@
+import { renderGarage } from "./garage/garage";
 import { renderMenu } from "./menu/menu";
 
 export const render = () => {
