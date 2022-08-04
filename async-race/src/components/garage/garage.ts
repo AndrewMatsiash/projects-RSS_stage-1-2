@@ -1,4 +1,5 @@
 import { renderCar } from "../car/car";
+import globalState from "../globalState";
 
 export const renderGarage = () => `<h1>Garage(${globalState.carsCount})</h1>
     <h2>Page 1</h2>
