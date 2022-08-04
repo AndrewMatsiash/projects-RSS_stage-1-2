@@ -1,4 +1,5 @@
 import { createCar } from "../request/createCar";
+import { deleteCar } from "../request/deletCar";
 import { renderGarage } from "./garage/garage";
 import { updateStateGarage } from "./garage/updateGarage";
 
@@ -26,8 +27,13 @@ export const listen = () => {
         const ROOT_GARAGE = document.querySelector('.garage-wrapper') as HTMLElement;
         ROOT_GARAGE.innerHTML = renderGarage()
       }
+      if (event.target.classList.contains("remove-btn")) {
+        const idCar: number = +event.target.id.split('remove-car-')[1]
+        await deleteCar(idCar)
+        await updateStateGarage()
+        const ROOT_GARAGE = document.querySelector('.garage-wrapper') as HTMLElement;
+        ROOT_GARAGE.innerHTML = renderGarage()
+      }
     }
-  }
-
-
-
+  })
+}
