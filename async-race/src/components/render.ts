@@ -1,3 +1,4 @@
+import { renderMenu } from "./menu/menu";
 
 export const render = () => {
   const html = `
