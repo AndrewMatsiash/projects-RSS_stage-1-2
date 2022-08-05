@@ -3,19 +3,10 @@ import { deleteCar } from "../../request/deletCar";
 import { updateCar } from "../../request/updateCar";
 import { renderGarage } from "../garage/garage";
 import { updateStateGarage } from "../garage/updateGarage";
+import { getDateOfForm } from "../utils/utils";
 
 
 
-const getDateOfForm = (id: string) => {
-  const form = document.getElementById(`${id}`) as HTMLFormElement
-  form?.addEventListener('submit', ev => ev.preventDefault())
-  const formData = new FormData(form);
-  const car = {
-    name: formData.get('name'),
-    color: formData.get('color'),
-  };
-  return car
-}
 
 export const listenerFormBtnCreate = async function (){
   await createCar(getDateOfForm('create') as ICar)

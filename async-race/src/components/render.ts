@@ -20,7 +20,7 @@ export const render = () => {
       <div class="race-controls">
         <button class="button race-btn" id="race">Race</button>
         <button class="button reset-btn" id="reset">Reset</button>
-        <button class="button reset-btn" id="reset">generation cars</button>
+        <button class="button generation-btn" id="generation">generation cars</button>
       </div>
       <div class="garage-wrapper" id="garage">${renderGarage()}</div>
       <div class="massage-wrapper">
