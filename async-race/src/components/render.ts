@@ -1,5 +1,6 @@
 import { renderGarage } from "./garage/garage";
 import { renderMenu } from "./menu/menu";
+import { renderWinners } from "./winners/winners";
 
 export const render = () => {
   const html = `
@@ -25,7 +26,9 @@ ${renderGarage()}
     <div class="massage-wrapper">
       <div class="massage" id="message"></div>
     </div>
-    <div class="winners" id="winners-view" style="display:none"></div>
+    <div class="winners" id="winners-view" style="display:none">
+    ${renderWinners()}
+    </div>
     <div class="pagination">
       <button class="button prev-btn color" id="prev-btn">Prev</button>
       <button class="button next-btn color" id="next-btn">Next</button>
