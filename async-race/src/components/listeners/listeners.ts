@@ -17,6 +17,19 @@ import { listenerNextBtn } from "./listenersPagination";
 export const listen = () => {
   document.body.addEventListener('click', async (event: MouseEvent) => {
     if (event.target instanceof Element) {
+      if (event.target.classList.contains("garage-menu-btn")) {
+        const sectionGarage = document.querySelector('.garage-container') as HTMLElement
+        const sectionWinners = document.querySelector('.winners-container') as HTMLElement
+        sectionGarage.style.display = 'block'
+        sectionWinners.style.display = 'none'
+
+      }
+      if (event.target.classList.contains("winners-menu-btn")) {
+        const sectionGarage = document.querySelector('.garage-container') as HTMLElement
+        const sectionWinners = document.querySelector('.winners-container') as HTMLElement
+        sectionGarage.style.display = 'none'
+        sectionWinners.style.display = 'block'
+      }
       if (event.target.classList.contains("create-btn")) {
         listenerFormBtnCreate()
       }
