@@ -4,7 +4,7 @@ import globalState from "../globalState";
 export const renderWinners = () => `
 <h1>Winners (${globalState.winnersCount})</h1>
 <h2>Page #${globalState.winnersPage}</h2>
-<table class="table" cellspading="0" border="0" cellpadding="20">
+<table class="table" cellspading="0" border="0" cellpadding="0">
   <thead>
     <th>Number</th>
     <th>Car</th>

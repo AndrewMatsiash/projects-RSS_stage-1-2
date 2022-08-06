@@ -1,6 +1,7 @@
 @import './components/car/car.scss';
 @import './components/menu/menu.scss';
 @import './components/car/renderCar.scss';
+@import './components/winners/winners.scss';
 
 *,
 *::before,
@@ -23,20 +24,55 @@ html {
 body {
   margin: 0;
   padding: 0;
-  // min-height: 100vh;
   height: 100%;
   display: flex;
   flex-direction: column;
-  // align-items: center;
-  // justify-content: center;
   background-color: darkslategrey;
   color: white;
   text-transform: uppercase;
 }
 
-// .garage-wrapper{
-//   height: 50vh;
-// }
+.button{
+    cursor: pointer;
+    border: none;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 3px;
+    background: rgb(64, 199, 129);
+    box-shadow: 0 -3px rgb(53, 167, 110) inset;
+    transition: 0.2s;
+ }
+
+.button:hover {
+  background: rgb(53, 167, 110);
+}
+
+.button:active {
+  background: rgb(33, 147, 90);
+  box-shadow: 0 3px rgb(33, 147, 90) inset;
+}
+
 .wrapper {
   padding: 0 15px;
+}
+
+input[type ='text'] {
+  width: 200px;
+  font-size: 13px;
+  padding: 6px 0 4px 10px;
+  border: 1px solid #cecece;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+:disabled:hover{
+  background-color: #cecece;
+  cursor:auto;
+
+}
+:disabled{
+  background-color: #cecece;
+  cursor:auto;
+
 }

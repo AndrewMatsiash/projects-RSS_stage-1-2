@@ -1,3 +1,4 @@
+import { renderForm } from "./forms/forms";
 import { renderGarage } from "./garage/garage";
 import { renderMenu } from "./menu/menu";
 import { renderWinners } from "./winners/winners";
@@ -7,20 +8,11 @@ export const render = () => {
  <header class="header">${renderMenu()}</header>
     <main class="main">
     <section class="garage-container">
-     <form class="form" id="create">
-        <input type="text" id="create-name" name="name" value="" />
-        <input type="color" id="create-color" name="color" value="#ffffff" />
-        <button class="button create-btn" type="submit" id="create-btn">create</button>
-      </form>
-      <form class="form" id="update">
-        <input type="text" id="update-name" name="name" disabled value="" />
-        <input type="color" id="update-color" name="color" disabled value="#ffffff"/>
-        <button class="button update-btn" type="submit" disabled id="update-btn">update</button>
-      </form>
+     ${renderForm()}
       <div class="race-controls">
         <button class="button race-btn" id="race">Race</button>
         <button class="button reset-btn" id="reset">Reset</button>
-        <button class="button generation-btn" id="generation">generation cars</button>
+        <button class="button generation-btn" id="generation">Generation cars</button>
       </div>
       <div class="garage-wrapper" id="garage">${renderGarage()}</div>
       <div class="massage-wrapper">
