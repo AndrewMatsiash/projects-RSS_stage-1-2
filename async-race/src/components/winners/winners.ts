@@ -1,5 +1,5 @@
-import { renderImg } from "../car/car";
-import globalState from "../globalState";
+import { renderImg } from '../car/car';
+import globalState from '../globalState';
 
 export const renderWinners = () => `
 <h1>Winners (${globalState.winnersCount})</h1>
@@ -14,10 +14,10 @@ export const renderWinners = () => `
   </thead>
   <tbody>
 
-  ${globalState.winners.map((winner, index) => `
+  ${globalState.winners.map((winner:Iwinner, index:number) => `
     <tr>
     <td>${index + 1}</td>
-    <td>${renderImg(winner)}</td>
+    <td>${renderImg('#ffff')}</td>
     <td>name</td>
     <td>${winner.wins}</td>
     <td>${winner.time}</td>
@@ -26,4 +26,4 @@ export const renderWinners = () => `
   </tbody>
 
 </table>
-`
+`;

@@ -1,3 +1,12 @@
-.general-buttons{
+.general-buttons {
   margin-bottom: 15px;
+}
+
+// .car:hover {
+
+//   transform: translateX(500%);
+// }
+
+.car {
+  transition: transform 3s;
 }

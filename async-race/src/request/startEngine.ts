@@ -1,3 +1,8 @@
 import { engine } from './rootRequest';
 
-const startEngine = async (id:number) => (await fetch(`${engine}?id=${id}$status=started`)).json();
+export const startEngine = async (id:number) => (await fetch(`${engine}?id=${id}&status=started`, {
+  method: 'PATCH',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+})).json();

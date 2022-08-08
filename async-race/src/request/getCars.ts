@@ -6,5 +6,5 @@ export const getCars = async (page: number, limit = 7) => {
   return {
     items: await response.json(),
     count: response.headers.get('X-Total-Count'),
-  }
+  };
 };

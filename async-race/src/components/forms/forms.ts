@@ -8,4 +8,4 @@ export const renderForm = () => `
         <input type="text" id="update-name" name="name" disabled value="" />
         <input type="color" id="update-color" name="color" disabled value="#ffffff"/>
         <button class="button update-btn" type="submit" disabled id="update-btn">update</button>
-      </form>`
+      </form>`;
