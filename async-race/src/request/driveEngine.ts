@@ -1,6 +1,6 @@
 import { engine } from './rootRequest';
 
-export const drive = async (id:number) => {
+export const drive = async (id: number): Promise<{ success: boolean } | { success?: undefined }> => {
   const res = await fetch(`${engine}?id=${id}&status=drive`, {
     method: 'PATCH',
     headers: {

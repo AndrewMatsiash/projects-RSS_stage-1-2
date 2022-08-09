@@ -1,3 +1,4 @@
+import { ICar } from '../types/type';
 import { garage } from './rootRequest';
 
 export const deleteCar = async (id:number): Promise<ICar[]> => {

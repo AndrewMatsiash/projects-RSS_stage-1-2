@@ -1,6 +1,6 @@
 import { getCar } from '../../request/getCar';
 
-export const listenerGarageSelectBtn = async function (event: Event) {
+export const listenerGarageSelectBtn = async (event: Event):Promise<void> => {
   if (event.target instanceof Element) {
     const idCar: number = +event.target.id.split('select-car-')[1];
     const selectedCar = await getCar(idCar);

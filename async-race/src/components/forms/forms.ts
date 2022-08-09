@@ -1,4 +1,4 @@
-export const renderForm = () => `
+export const renderForm = ():string => `
     <form class="form" id="create">
         <input type="text" id="create-name" name="name" value="" />
         <input type="color" id="create-color" name="color" value="#ffffff" />

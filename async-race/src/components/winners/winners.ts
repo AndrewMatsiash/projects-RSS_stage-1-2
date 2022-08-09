@@ -1,7 +1,8 @@
+import { Iwinner } from '../../types/type';
 import { renderImg } from '../car/car';
 import globalState from '../globalState';
 
-export const renderWinners = () => `
+export const renderWinners = (): string => `
 <h1>Winners (${globalState.winnersCount})</h1>
 <h2>Page #${globalState.winnersPage}</h2>
 <table class="table" cellspading="0" border="0" cellpadding="0">

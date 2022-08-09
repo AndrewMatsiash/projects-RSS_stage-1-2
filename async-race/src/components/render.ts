@@ -4,7 +4,7 @@ import { renderMenu } from './menu/menu';
 import { renderWinners } from './winners/winners';
 // import { renderWinners } from "./winners/winners";
 
-export const render = () => {
+export const render = (): void => {
   const html = `
  <header class="header">${renderMenu()}</header>
     <main class="main">
