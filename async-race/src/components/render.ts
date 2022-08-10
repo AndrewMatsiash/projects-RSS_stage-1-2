@@ -17,7 +17,7 @@ export const render = (): void => {
       </div>
       <div class="garage-wrapper" id="garage">${renderGarage()}</div>
       <div class="massage-wrapper">
-        <div class="massage" id="message"></div>
+        <div class="massage" id="massage">asdlfjlasjflsjflkjsflkj</div>
       </div>
     </section>
     <section class="winners-container" style="display: none">

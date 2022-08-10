@@ -11,15 +11,26 @@ export interface Iwinner {
 }
 
 export type State = {
-  id?:number
+  id?: number;
+  success?:boolean;
+  time?:number
 };
 
-// export interface IglobalState {
-//   garagePage: number,
-//   cars:ICar[],
-//   carsCount:number,
-//   winnersPage: number,
-//   animation: Ianimation,
-//   winners:Iwinner[],
-//   winnersCount:number,
-// }
+export interface Ianimation {
+  id?: Iid;
+  [key: string]: any;
+}
+
+export interface Iid {
+  id?: number;
+}
+
+export interface IglobalState {
+  garagePage: number;
+  cars: ICar[];
+  carsCount: string | null;
+  winnersPage: number;
+  animation: Ianimation;
+  winners: Iwinner[];
+  winnersCount: string | null;
+}

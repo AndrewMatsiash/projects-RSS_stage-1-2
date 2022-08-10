@@ -7,5 +7,5 @@ export const drive = async (id: number): Promise<{ success: boolean } | { succes
       'Content-Type': 'application/json',
     },
   }).catch();
-  return res.status !== 200 ? { success: false } : { ...(await res.json) };
+  return res.status !== 200 ? { success: false } : { success: true };
 };

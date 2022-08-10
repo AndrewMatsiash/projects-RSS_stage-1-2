@@ -77,3 +77,10 @@ input[type ='text'] {
 
 }
 
+.massage.active{
+  position: absolute;
+    width: 100%;
+    top: 25%;
+    text-align: center;
+    font-size: 50px;
+}

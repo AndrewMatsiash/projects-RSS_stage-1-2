@@ -1,5 +1,5 @@
 import { getCars } from '../../request/getCars';
-import globalState from '../globalState';
+import { globalState } from '../globalState';
 
 export const updateStateGarage = async (): Promise<void> => {
   const { items, count } = await getCars(globalState.garagePage);

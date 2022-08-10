@@ -1,7 +1,7 @@
 import { getCars } from '../../request/getCars';
 import { renderGarage } from '../garage/garage';
 import { updateStateGarage } from '../garage/updateGarage';
-import globalState from '../globalState';
+import { globalState } from '../globalState';
 
 export const listenerNextBtn = async (event: Event): Promise<void> => {
   if (event.target instanceof Element) {
