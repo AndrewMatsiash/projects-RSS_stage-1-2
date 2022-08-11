@@ -15,15 +15,13 @@ export const render = (): void => {
         <button class="button reset-btn" id="reset">Reset</button>
         <button class="button generation-btn" id="generation">Generation cars</button>
       </div>
-      <div class="garage-wrapper" id="garage">${renderGarage()}</div>
+      <div class="garage-wrapper"  id="garage" style="display: block">${renderGarage()}</div>
       <div class="massage-wrapper">
         <div class="massage" id="massage"></div>
       </div>
     </section>
     <section class="winners-container" style="display: none">
-    <div class="winners" id="winners-view" >
-        ${renderWinners()}
-      </div>
+    <div class="winners" id="winners-view" > ${renderWinners()}</div>
     <section>
 
     </main>

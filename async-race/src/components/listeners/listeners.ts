@@ -6,6 +6,7 @@ import { listenerFormBtnCreate, listenerFormBtnRemove, listenerFormBtnUpdate } f
 import { listenerGarageSelectBtn } from './listenersGarage';
 import { listenerNextBtn, listenerPrevBtn } from './listenersPagination';
 import { generationCarsBtn } from './listenersRaceControl';
+import { renderSortedView } from './listenerWinners';
 
 export const listen = (): void => {
   document.body.addEventListener('click', async (event: MouseEvent) => {
@@ -50,10 +51,19 @@ export const listen = (): void => {
         listenerFormBtnUpdate();
       }
       if (event.target.classList.contains('next-btn')) {
-        listenerNextBtn(event);
+        listenerNextBtn();
       }
       if (event.target.classList.contains('prev-btn')) {
-        listenerPrevBtn(event);
+        listenerPrevBtn();
+      }
+      if (event.target.classList.contains('time')) {
+        renderSortedView('time');
+      }
+      if (event.target.classList.contains('winners')) {
+        renderSortedView('wins');
+      }
+      if (event.target.classList.contains('id')) {
+        renderSortedView('id');
       }
     }
   });

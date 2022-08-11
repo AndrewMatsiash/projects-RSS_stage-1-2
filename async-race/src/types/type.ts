@@ -4,16 +4,10 @@ export interface ICar {
   id?: number
 }
 
-export interface Iwinner {
-  id: number,
-  wins: number,
-  time: number
-}
-
 export type State = {
   id?: number;
-  success?:boolean;
-  time?:number
+  success?: boolean;
+  time?: number
 };
 
 export interface Ianimation {
@@ -31,6 +25,25 @@ export interface IglobalState {
   carsCount: string | null;
   winnersPage: number;
   animation: Ianimation;
-  winners: Iwinner[];
+  winners: IWinners[];
   winnersCount: string | null;
+  order:string;
+  sort:string;
+}
+
+export interface IWinners {
+  id: number,
+  car: {
+    name: string,
+    color: string
+  },
+  wins: number,
+  time: number,
+}
+
+export interface IGetWinners {
+  page: number,
+  limit?: number,
+  sort?: string | undefined,
+  order?: string | undefined
 }

@@ -16,3 +16,10 @@
   border: 1px solid #dddddd;
   padding: 5px;
 }
+
+.time,.id,.wins{
+  cursor: pointer;
+}
+.time:hover,.id:hover,.wins:hover{
+  background-color: darkblue;
+}

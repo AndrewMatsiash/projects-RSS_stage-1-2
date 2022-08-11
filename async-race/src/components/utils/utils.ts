@@ -1,3 +1,4 @@
+import { createWinner } from '../../request/createWinner';
 import { drive } from '../../request/driveEngine';
 import { getCar } from '../../request/getCar';
 import { getCars } from '../../request/getCars';
@@ -5,6 +6,7 @@ import { startEngine } from '../../request/startEngine';
 import { stopEngine } from '../../request/stopEngine';
 import { State } from '../../types/type';
 import { globalState } from '../globalState';
+import { updateWinnerState } from '../winners/updateWinner';
 
 export const getDateOfForm = (id: string): { name: FormDataEntryValue | null, color: FormDataEntryValue | null } => {
   const form = document.getElementById(`${id}`) as HTMLFormElement;
@@ -267,10 +269,14 @@ export const raceAll = async (): Promise<void> => {
     arrPromisesRace.push(carStart);
   }
   const dataCarsRaceArr = await Promise.all(arrPromisesRace);
-  const sortCarsRaceArr = dataCarsRaceArr.filter((el) => el.success).sort((a, b) => a.time - b.time);
-  const WinnerRace = await getCar(sortCarsRaceArr[0].id);
+  const winner = dataCarsRaceArr.filter((el) => el.success).sort((a, b) => a.time - b.time)[0];
+  const winnerRace = await getCar(winner.id);
   massage.classList.add('active');
-  massage.innerText = `wins ${WinnerRace.name}`;
+  massage.innerText = `wins ${winnerRace.name}, time ${winner.time / 1000} sec`;
+  await createWinner({
+    id: winner.id, name: winnerRace.name, wins: 1, time: winner.time / 1000,
+  });
+  await updateWinnerState();
 };
 
 export const resetAll = async (): Promise<void> => {

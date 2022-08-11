@@ -13,8 +13,8 @@ export const renderCar = ({ id, name, color }: ICar): string => {
   <div class="road">
     <div class="launch-pad" >
       <div class="control-panel">
-        <button class="icon start-engine-btn color" id="start-engine-car-${id}">go</button>
-        <button class="icon stop-engine-btn color" id="stop-engine-car-${id}" disabled>stop</button>
+        <button class="icon start-engine-btn" id="start-engine-car-${id}">A</button>
+        <button class="icon stop-engine-btn " id="stop-engine-car-${id}" disabled>B</button>
         <div class="car" id="car-${id}">${renderImg(color)}</div>
       </div>
     </div>

@@ -1,10 +1,13 @@
 import { createCar } from '../../request/createCar';
 import { deleteCar } from '../../request/deletCar';
+import { deleteWinner } from '../../request/deletWinner';
 import { updateCar } from '../../request/updateCar';
 import { ICar } from '../../types/type';
 import { renderGarage } from '../garage/garage';
 import { updateStateGarage } from '../garage/updateGarage';
 import { getDateOfForm } from '../utils/utils';
+import { updateWinnerState } from '../winners/updateWinner';
+import { renderWinners } from '../winners/winners';
 
 export const listenerFormBtnCreate = async (): Promise<void> => {
   await createCar(getDateOfForm('create') as ICar);
@@ -20,6 +23,10 @@ export const listenerFormBtnRemove = async (event:Event): Promise<void> => {
     await updateStateGarage();
     const ROOT_GARAGE = document.querySelector('.garage-wrapper') as HTMLElement;
     ROOT_GARAGE.innerHTML = renderGarage();
+    await deleteWinner(idCar);
+    await updateWinnerState();
+    const ROOT_WINNER = document.querySelector('.winner') as HTMLElement;
+    ROOT_WINNER.innerHTML = renderWinners();
   }
 };
 
