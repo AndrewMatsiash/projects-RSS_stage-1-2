@@ -206,9 +206,8 @@ export const generateRandomCars = (): { name: string; color: string }[] => new A
   .map(() => ({ name: getRandomName(), color: getRandomColor() }));
 
 export function animation(car: HTMLElement, distance: number, animationTime: number): State {
-  let start: number;
+  let start = 0;
   const state: State = {};
-
   function step(timestamp: number) {
     if (!start) start = timestamp;
     const time = timestamp - start;
@@ -223,39 +222,42 @@ export function animation(car: HTMLElement, distance: number, animationTime: num
   return state;
 }
 
-export const startDriving = async (id:number):Promise<State> => {
+export const startDriving = async (id: number): Promise<{ success: boolean | undefined; id: number; time: number }> => {
   const car = document.getElementById(`car-${id}`) as HTMLElement;
   const road = document.querySelector('.road') as HTMLElement;
   const flag = document.querySelector('.flag') as HTMLElement;
-  const startButton = document.getElementById(`start-engine-car-${id}`) as HTMLButtonElement;
   const stopBtn = document.getElementById(`stop-engine-car-${id}`) as HTMLButtonElement;
+  const startButton = document.getElementById(`start-engine-car-${id}`) as HTMLButtonElement;
   startButton.disabled = true;
-  stopBtn.disabled = false;
+
   const { velocity, distance } = await startEngine(id);
   const time = Math.round(distance / velocity);
   const htmlDistance = road.offsetWidth - car.offsetWidth - flag.offsetWidth + 200;
+
   globalState.animation[id] = animation(car, htmlDistance, time);
+
   const { success } = await drive(id);
+
   if (!success) window.cancelAnimationFrame(globalState.animation[id].id);
+  stopBtn.disabled = false;
   return { success, id, time };
 };
 
 export const stopDriving = async (id: number): Promise<void> => {
   const stopButton = document.getElementById(`stop-engine-car-${id}`) as HTMLButtonElement;
   const startButton = document.getElementById(`start-engine-car-${id}`) as HTMLButtonElement;
-
-  stopButton.disabled = true;
-  startButton.disabled = false;
-
+  const car = document.getElementById(`car-${id}`) as HTMLElement;
   const stopRes = await stopEngine(id);
   if (stopRes) {
     window.cancelAnimationFrame(globalState.animation[id]);
-    const car = document.getElementById(`car-${id}`) as HTMLElement;
     car.style.transform = 'translateX(0px)';
   }
+  stopButton.disabled = true;
+  startButton.disabled = false;
 };
 
 export const raceAll = async (): Promise<void> => {
+  const massage = document.getElementById('massage') as HTMLDivElement;
   const { items } = await getCars(globalState.garagePage);
   const idCarsArr: number[] = items.map((elem) => elem.id) as number[];
   const arrPromisesRace = [];
@@ -267,7 +269,17 @@ export const raceAll = async (): Promise<void> => {
   const dataCarsRaceArr = await Promise.all(arrPromisesRace);
   const sortCarsRaceArr = dataCarsRaceArr.filter((el) => el.success).sort((a, b) => a.time - b.time);
   const WinnerRace = await getCar(sortCarsRaceArr[0].id);
-  const massage = document.getElementById('massage') as HTMLDivElement;
   massage.classList.add('active');
   massage.innerText = `wins ${WinnerRace.name}`;
+};
+
+export const resetAll = async (): Promise<void> => {
+  const massage = document.getElementById('massage') as HTMLDivElement;
+  const { items } = await getCars(globalState.garagePage);
+  const idCarsArr: number[] = items.map((elem) => elem.id) as number[];
+  for (let i = 0; i < idCarsArr.length; i++) {
+    stopDriving(idCarsArr[i]);
+  }
+  massage.classList.add('active');
+  massage.innerText = '';
 };
