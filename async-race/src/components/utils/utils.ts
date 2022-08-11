@@ -273,9 +273,7 @@ export const raceAll = async (): Promise<void> => {
   const winnerRace = await getCar(winner.id);
   massage.classList.add('active');
   massage.innerText = `wins ${winnerRace.name}, time ${winner.time / 1000} sec`;
-  await createWinner({
-    id: winner.id, name: winnerRace.name, wins: 1, time: winner.time / 1000,
-  });
+  await createWinner({ id: winner.id, wins: 1, time: winner.time / 1000 });
   await updateWinnerState();
 };
 

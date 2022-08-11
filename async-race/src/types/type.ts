@@ -33,10 +33,15 @@ export interface IglobalState {
 
 export interface IWinners {
   id: number,
-  car: {
+    car: {
     name: string,
     color: string
   },
+  wins: number,
+  time: number,
+}
+export interface IWinner {
+  id: number,
   wins: number,
   time: number,
 }

@@ -1,7 +1,7 @@
-import { ICar, IWinners } from '../types/type';
+import { IWinner, IWinners } from '../types/type';
 import { winners } from './rootRequest';
 
-export const createWinner = async (body:IWinners): Promise<IWinners> => (
+export const createWinner = async (body:IWinner): Promise<IWinners> => (
   await fetch(`${winners}`, {
     method: 'POST',
     body: JSON.stringify(body),
