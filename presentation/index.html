@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>Demo Presentation</h1>
+			</section>
+			<section data-background-gradient="linear-gradient(to right, #017279, #161f29)" style="font-size: 5rem;">Promise
+			</section>
+			<section>
+				<h6>What is a promise?</h6>
+			</section>
+			</section>
+			<section>
+				<h3>A real-life example</h3>
+				<img width="300px" src="https://files.fm/thumb_show.php?i=mxyf64w47" alt="">
+				<img width="300px" src="https://files.fm/thumb_show.php?i=xvkr2webm" alt="">
+				<img width="300px" src="https://files.fm/thumb_show.php?i=2s6dfz92f" alt="">
+				<ul>
+					<li>you make an order in a cafe</li>
+					<li>the order is being prepared, you are waiting for it</li>
+					<li>The order was completed successfully</li>
+					<li>there was a breakdown, the order is not ready</li>
+				</ul>
+			</section>
+			</section>
+			<section>
+				<h2 style="color:red">Promise in javaScript</h2>
+				<p>A Promise is simply an object in JavaScript</p>
+				<ul>
+					<p>A promise is always in one of the three states</p>
+					<li><em>pending</em> : which is initial state, neither fulfilled nor rejected</li>
+					<li><em style='color:green'>fulfilled</em> : meaning that the operation completed successfully</li>
+					<li><em style='color:red'>rejected</em>: meaning that the operation failed</li>
+				</ul>
+				<p>Once a promise is <strong style='color:green'>fulfilled</strong> or <strong
+						style='color:red'>rejected</strong>,it cannot switch to any other state.</p>
+			</section>
+			<section>
+				<ul>Why promise?
+					<li>Promises make asynchronous code easier to handle than callbacks.</li>
+					<li>With promises we can avoid the hell of callbacks.</li>
+				</ul>
+				<img width='450px' src="https://files.fm/thumb_show.php?i=vs28tzw6w" alt="">
+			</section>
+			<section>
+				<h3>How to create a Promise?</h3>
+				<p>To create a promise, we need to create an instance of the Promises class.</p>
+				<img src="https://files.fm/thumb_show.php?i=rct94t6p4" alt="">
+				<p>Then pass a callback function to the constructor.</p>
+				<img src="https://files.fm/thumb_show.php?i=ve43snk5z" alt="">
+				<p>The callback function accepts two functions as a parameter</p>
+				<img src="https://files.fm/thumb_show.php?i=jdcjfn8d6" alt="">
+			</section>
+			<section>
+				<p>Syntax of a Promise</p>
+				<img src="https://files.fm/thumb_show.php?i=avp552nj3" alt="">
+			</section>
+			<section>
+				<h2>Methods</h2>
+				<ul>
+					<li>then</li>
+					<li>cath</li>
+					<li>finally</li>
+				</ul>
+			</section>
+			<section>
+				<h4>Then</h4>
+				<img src="https://files.fm/thumb_show.php?i=guc43qudc" alt="">
+				<p>The first argument to the .then method is a function that is executed when the promise enters the
+					"successful" state and
+					receives the result.
+				</p>
+				<p>The second argument to .then is a function that is executed when the promise enters the "failed" state and
+					receives an
+					error.</p>
+			</section>
+			<section>
+				<h4>Catch</h4>
+				<img src="https://files.fm/thumb_show.php?i=jv3v7n723" alt="">
+				<p>The first argument to the .then method is a function that is executed when the promise enters the
+					"successful" state and
+					receives the result.
+				</p>
+			</section>
+			<section>
+				<h4>finally</h4>
+				<img src="https://files.fm/thumb_show.php?i=3nyqp8cnq" alt="">
+				<p>the code will be executed in any case when the promise is completed: successfully or with an error.</p>
+				<p>The handler called from finally has no arguments. In finally, we don't know how the promise was completed.
+					And this is
+					fine, because usually our task is to perform "general" final procedures.
+				</p>
+
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>
